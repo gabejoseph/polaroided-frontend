@@ -18,50 +18,58 @@ function fetchUsers () {
     })
 }
 
-// create
+function createForm() {
+    const usersForm = document.getElementById("users-form")
 
-    // create a form
-    // add an event listener
-    // once form is submitted => fetch 'post' to my back end 
-    // do something with the returned object
+    usersForm.innerHTML += 
+    `
+    <form>
+        Name: <input type="text" id="name"></br>
+        Username: <input type="text" id="username"></br>
+        Email: <input type="text" id="email"></br>
+        <input type="submit" value="Create User">
+    </form>
+    `
+    usersForm.addEventListener("submit", userFormSubmission)
+}
 
-    function createForm() {
-        const usersForm = document.getElementById("users-form")
+function userFormSubmission () {
+    event.preventDefault()
+    const name = document.getElementById("name").value
+    const username = document.getElementById("username").value
+    const email = document.getElementById("email").value
 
-        usersForm.innerHTML += 
-        `
-        <form>
-            Name: <input type="text" id="name"></br>
-            Username: <input type="text" id="username"></br>
-            Email: <input type="text" id="email"></br>
-            <input type="submit" value="Create User">
-        </form>
-        `
-        usersForm.addEventListener("submit", userFormSubmission)
+    let user = {
+        name: name, 
+        username: username,
+        email: email
     }
 
-    function userFormSubmission () {
-        event.preventDefault()
-        const name = document.getElementById("name").value
-        const username = document.getElementById("username").value
-        const email = document.getElementById("email").value
-
-        let user = {
-            name: name, 
-            username: username,
-            email: email
-        }
-
-        fetch(`${BASE_URL}/users`, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
+    fetch(`${BASE_URL}/users`, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+        .then(resp => resp.json())
+        .then(user => {
+            const u = new User(user.id, user.name, user.username, user.email)
+            u.renderUser();
         })
-            .then(resp => resp.json())
-
-    }
+}
 
 // delete
+
+function deleteUser() {
+    let userId = parseInt(event.target.dataset.id)
+    console.log(userId)
+
+    fetch(`${BASE_URL}/users/${userId}`, {
+        method: 'DELETE'
+    })
+    
+    this.location.reload()
+}
+
