@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do 
+    User.create([{
+        name: Faker::Name.name,
+        username: Faker::Internet.username,
+        email: Faker::Internet.safe_email
+    }])
+end 
+
+40.times do 
+    Photo.create([{
+        img_src: Faker::LoremPixel.image,
+        caption: Faker::Quotes::Rajnikanth.joke,
+        user_id: Faker::Number.within(range: 1..30)
+    }])
+end 
