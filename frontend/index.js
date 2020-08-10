@@ -34,12 +34,34 @@ function fetchUsers () {
             Name: <input type="text" id="name"></br>
             Username: <input type="text" id="username"></br>
             Email: <input type="text" id="email"></br>
-            <input type="submit" value="Create User"
+            <input type="submit" value="Create User">
         </form>
-        
-        
-        
         `
+        usersForm.addEventListener("submit", userFormSubmission)
+    }
+
+    function userFormSubmission () {
+        event.preventDefault()
+        const name = document.getElementById("name").value
+        const username = document.getElementById("username").value
+        const email = document.getElementById("email").value
+
+        let user = {
+            name: name, 
+            username: username,
+            email: email
+        }
+
+        fetch(`${BASE_URL}/users`, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(resp => resp.json())
+
     }
 
 // delete
