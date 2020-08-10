@@ -18,6 +18,6 @@ end
     Photo.create([{
         img_src: Faker::LoremPixel.image,
         caption: Faker::Quotes::Rajnikanth.joke,
-        user_id: Faker::Number.within(range: 1..30)
+        user_id: Faker::Number.within(range: 1..10)
     }])
 end 

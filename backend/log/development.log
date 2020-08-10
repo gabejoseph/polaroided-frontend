@@ -980,3 +980,305 @@ Processing by UsersController#index as */*
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2330)
 
 
+Started GET "//users" for ::1 at 2020-08-10 15:54:30 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 30.3ms | ActiveRecord: 2.6ms | Allocations: 7900)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:00:27 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 2330)
+
+
+Started GET "/photos" for ::1 at 2020-08-10 16:00:35 -0400
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 23.9ms | ActiveRecord: 2.2ms | Allocations: 7676)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:00:38 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 2313)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:01:14 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2313)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:03:08 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 2330)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:03:53 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2330)
+
+
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200810134134)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200810134134"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhotos (20200810134147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "img_src" varchar, "caption" text, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_user_id" ON "photos" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200810134147"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-10 20:05:33.893319"], ["updated_at", "2020-08-10 20:05:33.893319"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Elliott Mitchell"], ["username", "mariana"], ["email", "stephaine@example.net"], ["created_at", "2020-08-10 20:05:47.412941"], ["updated_at", "2020-08-10 20:05:47.412941"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Geraldo Runolfsson MD"], ["username", "antoine"], ["email", "brianna_mertz@example.com"], ["created_at", "2020-08-10 20:05:47.434723"], ["updated_at", "2020-08-10 20:05:47.434723"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "In Larkin"], ["username", "malinda_hegmann"], ["email", "christian@example.org"], ["created_at", "2020-08-10 20:05:47.457695"], ["updated_at", "2020-08-10 20:05:47.457695"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kimberli Ledner"], ["username", "graciela"], ["email", "man_konopelski@example.com"], ["created_at", "2020-08-10 20:05:47.480219"], ["updated_at", "2020-08-10 20:05:47.480219"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Francis Mitchell II"], ["username", "evelia"], ["email", "rozanne@example.com"], ["created_at", "2020-08-10 20:05:47.502338"], ["updated_at", "2020-08-10 20:05:47.502338"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nelle McDermott"], ["username", "nicolas"], ["email", "don@example.org"], ["created_at", "2020-08-10 20:05:47.524724"], ["updated_at", "2020-08-10 20:05:47.524724"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sherrie Dach"], ["username", "titus_effertz"], ["email", "caridad.hayes@example.com"], ["created_at", "2020-08-10 20:05:47.546923"], ["updated_at", "2020-08-10 20:05:47.546923"]]
+  [1m[35m (19.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chong Johns"], ["username", "malcom_bergnaum"], ["email", "kasey@example.org"], ["created_at", "2020-08-10 20:05:47.578678"], ["updated_at", "2020-08-10 20:05:47.578678"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Msgr. Mauricio Bins"], ["username", "tommy.larkin"], ["email", "andria_cormier@example.net"], ["created_at", "2020-08-10 20:05:47.602477"], ["updated_at", "2020-08-10 20:05:47.602477"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tera Senger"], ["username", "evelina.stoltenberg"], ["email", "dante@example.com"], ["created_at", "2020-08-10 20:05:47.626459"], ["updated_at", "2020-08-10 20:05:47.626459"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajini participates in long jump once every four year.... And those years are called LEAP year"], ["user_id", 3], ["created_at", "2020-08-10 20:05:47.758520"], ["updated_at", "2020-08-10 20:05:47.758520"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth was not amused by Gandhi’s non violence movement."], ["user_id", 3], ["created_at", "2020-08-10 20:05:47.785643"], ["updated_at", "2020-08-10 20:05:47.785643"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Adam and Eve are children of Rajinikanth"], ["user_id", 6], ["created_at", "2020-08-10 20:05:47.813208"], ["updated_at", "2020-08-10 20:05:47.813208"]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Computer doesn't give warning message to Rajini… Rajini warns computer"], ["user_id", 5], ["created_at", "2020-08-10 20:05:47.871437"], ["updated_at", "2020-08-10 20:05:47.871437"]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "When Rajnikant get angry at the Sun, it hides behind the moon… that phenomenon is called Solar eclipse."], ["user_id", 3], ["created_at", "2020-08-10 20:05:47.895394"], ["updated_at", "2020-08-10 20:05:47.895394"]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.5ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Einstein said you can't move at the speed of light, obviously he was never kicked by Rajinikanth"], ["user_id", 10], ["created_at", "2020-08-10 20:05:47.916356"], ["updated_at", "2020-08-10 20:05:47.916356"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth taught us all... Impossible is nothing..."], ["user_id", 3], ["created_at", "2020-08-10 20:05:47.944924"], ["updated_at", "2020-08-10 20:05:47.944924"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajnikanth's pulse is measured in richter scale."], ["user_id", 3], ["created_at", "2020-08-10 20:05:47.972470"], ["updated_at", "2020-08-10 20:05:47.972470"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.6ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajnikanth Saw The Movie Break k Baad before the Break !!!"], ["user_id", 7], ["created_at", "2020-08-10 20:05:47.996182"], ["updated_at", "2020-08-10 20:05:47.996182"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.2ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajini won the best actor oscar for his acting in a game of dumb charades"], ["user_id", 3], ["created_at", "2020-08-10 20:05:48.020731"], ["updated_at", "2020-08-10 20:05:48.020731"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth threw a grenade and killed 50 people, then grenade exploded"], ["user_id", 3], ["created_at", "2020-08-10 20:05:48.043631"], ["updated_at", "2020-08-10 20:05:48.043631"]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.6ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajnikanth has seen the face of the fat lady who owns the house in tom n jerry.."], ["user_id", 5], ["created_at", "2020-08-10 20:05:48.066365"], ["updated_at", "2020-08-10 20:05:48.066365"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajinikanth told joke to a little kid... Now he is known as laughing buddha"], ["user_id", 7], ["created_at", "2020-08-10 20:05:48.089289"], ["updated_at", "2020-08-10 20:05:48.089289"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.1ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajini can eat dosa with chop sticks"], ["user_id", 6], ["created_at", "2020-08-10 20:05:48.112636"], ["updated_at", "2020-08-10 20:05:48.112636"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajini participates in long jump once every four year.... And those years are called LEAP year"], ["user_id", 1], ["created_at", "2020-08-10 20:05:48.136267"], ["updated_at", "2020-08-10 20:05:48.136267"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.6ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Only Rajinijanth has 32 wisdom teeth."], ["user_id", 4], ["created_at", "2020-08-10 20:05:48.161083"], ["updated_at", "2020-08-10 20:05:48.161083"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth taught yoga to Baba Ramdev"], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.184546"], ["updated_at", "2020-08-10 20:05:48.184546"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.6ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth is so fast that he always comes yesterday"], ["user_id", 6], ["created_at", "2020-08-10 20:05:48.205977"], ["updated_at", "2020-08-10 20:05:48.205977"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.0ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajnikanth's pulse is measured in richter scale."], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.230186"], ["updated_at", "2020-08-10 20:05:48.230186"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.4ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth knows Ek chutki sindur ke kimat ... Rs 0.0234355884"], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.253565"], ["updated_at", "2020-08-10 20:05:48.253565"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajinikanth used the support of a building to tie his shoe lace, the building is known as Leaning tower of Pisa."], ["user_id", 2], ["created_at", "2020-08-10 20:05:48.270631"], ["updated_at", "2020-08-10 20:05:48.270631"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajnikanth became the coach of Indian cricket team and guess wha India won the Fifa world cup !"], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.286608"], ["updated_at", "2020-08-10 20:05:48.286608"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth can make 2 parallel lines intersect just by staring at them."], ["user_id", 3], ["created_at", "2020-08-10 20:05:48.300440"], ["updated_at", "2020-08-10 20:05:48.300440"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Only Rajinijanth has 32 wisdom teeth."], ["user_id", 1], ["created_at", "2020-08-10 20:05:48.314825"], ["updated_at", "2020-08-10 20:05:48.314825"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth can whistle and smile at the same time..."], ["user_id", 5], ["created_at", "2020-08-10 20:05:48.330764"], ["updated_at", "2020-08-10 20:05:48.330764"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth knows why this kolaveri kolaveri Di"], ["user_id", 8], ["created_at", "2020-08-10 20:05:48.347073"], ["updated_at", "2020-08-10 20:05:48.347073"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth is so fast that he always comes yesterday"], ["user_id", 8], ["created_at", "2020-08-10 20:05:48.369570"], ["updated_at", "2020-08-10 20:05:48.369570"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajinikath shouted at a boy for not wearing cap in the hot sun. Today that boy is known as Himesh Reshammiya."], ["user_id", 5], ["created_at", "2020-08-10 20:05:48.395050"], ["updated_at", "2020-08-10 20:05:48.395050"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajinikath shouted at a boy for not wearing cap in the hot sun. Today that boy is known as Himesh Reshammiya."], ["user_id", 2], ["created_at", "2020-08-10 20:05:48.420734"], ["updated_at", "2020-08-10 20:05:48.420734"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajnikanth entered bigg boss...The next day announcement was made... Rajnikanth chahte hai ki bigg boss confession room me aaye"], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.443101"], ["updated_at", "2020-08-10 20:05:48.443101"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (2.5ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajnikanth Saw The Movie Break k Baad before the Break !!!"], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.466182"], ["updated_at", "2020-08-10 20:05:48.466182"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajini can eat dosa with chop sticks"], ["user_id", 8], ["created_at", "2020-08-10 20:05:48.496225"], ["updated_at", "2020-08-10 20:05:48.496225"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth can whistle and smile at the same time..."], ["user_id", 6], ["created_at", "2020-08-10 20:05:48.520262"], ["updated_at", "2020-08-10 20:05:48.520262"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Today that building is popularly known as THE RED FORT.."], ["user_id", 2], ["created_at", "2020-08-10 20:05:48.550307"], ["updated_at", "2020-08-10 20:05:48.550307"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "When Rajnikant get angry at the Sun, it hides behind the moon… that phenomenon is called Solar eclipse."], ["user_id", 3], ["created_at", "2020-08-10 20:05:48.576136"], ["updated_at", "2020-08-10 20:05:48.576136"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "When RAJNI had surgery, the anesthesia was applied to the doctors."], ["user_id", 10], ["created_at", "2020-08-10 20:05:48.599949"], ["updated_at", "2020-08-10 20:05:48.599949"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.6ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth can make 2 parallel lines intersect just by staring at them."], ["user_id", 8], ["created_at", "2020-08-10 20:05:48.625022"], ["updated_at", "2020-08-10 20:05:48.625022"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.7ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajinikanth used the support of a building to tie his shoe lace, the building is known as Leaning tower of Pisa."], ["user_id", 1], ["created_at", "2020-08-10 20:05:48.649378"], ["updated_at", "2020-08-10 20:05:48.649378"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Once Rajinikanth told joke to a little kid... Now he is known as laughing buddha"], ["user_id", 8], ["created_at", "2020-08-10 20:05:48.672465"], ["updated_at", "2020-08-10 20:05:48.672465"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("img_src", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["img_src", "https://lorempixel.com/300/300"], ["caption", "Rajinikanth taught yoga to Baba Ramdev"], ["user_id", 9], ["created_at", "2020-08-10 20:05:48.697356"], ["updated_at", "2020-08-10 20:05:48.697356"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/photos" for ::1 at 2020-08-10 16:06:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 2.4ms | Allocations: 11503)
+
+
+Started GET "/users" for ::1 at 2020-08-10 16:06:10 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 1.2ms | Allocations: 6960)
+
+
+Started GET "/photos" for ::1 at 2020-08-10 16:06:16 -0400
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.5ms | Allocations: 6717)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:14:33 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 2337)
+
+
+Started GET "//users" for ::1 at 2020-08-10 16:15:05 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 1.6ms | Allocations: 2317)
+
+
