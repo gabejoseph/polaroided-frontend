@@ -8,13 +8,14 @@ class Photo {
     // instance method thats going to render the object to the dom
 
     renderPhoto() {
-        const user_div = document.getElementById(`${this.user_id}`)
+        let user_div = document.getElementById(`${this.user_id}`)
         // attach all photos where user_id = div id
+
         
         user_div.innerHTML += 
 
         `
-        <img src='${this.img_src}'>
+        <img src='${this.img_src}'><p>${this.caption}</p>
         `
 
     }
