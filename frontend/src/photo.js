@@ -8,14 +8,8 @@ class Photo {
     // instance method thats going to render the object to the dom
 
     renderPhoto() {
-
-        debugger
-        // attach all photos where user_id = div id
-
         const user_div = document.getElementById(`${this.user_id}`)
-        
-        console.log(user_div)
-        
+        // attach all photos where user_id = div id
         
         user_div.innerHTML += 
 
