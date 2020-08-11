@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
+    fetchImages()
     createForm()
 })
 
@@ -14,6 +15,17 @@ function fetchUsers () {
         for (const user of users) {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
+        }
+    })
+}
+
+function fetchImages () {
+    fetch(`${BASE_URL}/photos`)
+    .then(resp => resp.json())
+    .then(photos => {
+        for (const photo of photos) {
+            const p = new Photo(photo.img_src, photo.caption, photo.user_id)
+            p.renderPhoto();
         }
     })
 }
