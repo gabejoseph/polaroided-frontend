@@ -6,6 +6,8 @@ class User {
         this.email = email;
     }
 
+
+
     // instance method thats going to render the object to the dom
 
     renderUser() {
@@ -20,6 +22,7 @@ class User {
             <button class="delete-bttn" data-id=${this.id} onClick="deleteUser()">Delete User</button>
             <div>
         `
+        
     }
     
 }

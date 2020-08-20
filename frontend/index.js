@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
     fetchImages()
     createForm()
+    sortButton()
 })
 
 const BASE_URL = "http://localhost:3000/"
@@ -84,4 +85,35 @@ function deleteUser() {
     
     this.location.reload()
 }
+
+function sortButton () {
+    const button = document.querySelector(".sort")
+    button.addEventListener("click", sortUsers)
+}
+
+function sortUsers () {
+    fetch(`${BASE_URL}/users`)
+    .then(resp => resp.json())
+    .then(users => {
+        users.sort(function(a, b) {
+            var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+          
+            // names must be equal
+            return 0;
+          });
+        const usersDiv = document.getElementById("users-container")
+        usersDiv.innerHTML = '' 
+        users.renderUser()
+    })
+
+
+}
+
 
