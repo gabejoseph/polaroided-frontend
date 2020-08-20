@@ -110,7 +110,7 @@ function sortUsers () {
           });
         const usersDiv = document.getElementById("users-container")
         usersDiv.innerHTML = '' 
-        users.renderUser()
+        renderUser(users)
     })
 
 
