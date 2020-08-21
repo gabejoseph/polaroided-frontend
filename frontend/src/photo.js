@@ -15,6 +15,7 @@ class Photo {
         user_div.innerHTML += 
 
         `
+        <button />
         <img src='${this.img_src}'><p>${this.caption}</p>
         `
 
