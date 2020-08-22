@@ -1,4 +1,7 @@
 class Photo {
+
+
+
     constructor(img_src, caption, user_id) {
         this.img_src = img_src;
         this.caption = caption;
@@ -9,20 +12,26 @@ class Photo {
 
     renderPhoto() {
         let user_div = document.getElementById(`${this.user_id}`)
+
         // attach all photos where user_id = div id
 
         
         user_div.innerHTML += 
 
         `
-        <button className="upload" >Upload Photo</button></br>
+        <button class="upload" >Upload Photo</button></br>
 
         <img src='${this.img_src}'><p>${this.caption}</p>
         `
 
+        user_div.addEventListener("click", handleClick)
+
     }
 
+}
 
-
+function handleClick() {
+    const uploadListener = document.querySelector(".upload")
+    uploadListener.addEventListener("click", () => console.log("handleClick"))
 
 }
