@@ -15,9 +15,14 @@ class Photo {
         user_div.innerHTML += 
 
         `
-        <button />
+        <button className="upload" >Upload Photo</button></br>
+
         <img src='${this.img_src}'><p>${this.caption}</p>
         `
 
     }
+
+
+
+
 }
