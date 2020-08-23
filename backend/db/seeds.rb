@@ -14,7 +14,7 @@
     }])
 end 
 
-40.times do 
+10.times do 
     Photo.create([{
         img_src: Faker::LoremPixel.image,
         caption: Faker::Quotes::Rajnikanth.joke,
