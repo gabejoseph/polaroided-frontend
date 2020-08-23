@@ -8,7 +8,6 @@ class Photo {
         this.user_id = user_id
     }
 
-    // instance method thats going to render the object to the dom
 
     renderPhoto() {
         const user_div = document.getElementById(`${this.user_id}`)
@@ -17,30 +16,14 @@ class Photo {
             user_div.innerHTML += 
 
             `
-            <button class="upload" id=${this.user_id} >Upload Photo</button></br>
+            <button class="upload" id='${this.user_id}' >Upload Photo</button></br>
     
             <img src='${this.img_src}'><p>${this.caption}</p>
             `
         }
 
-        // attach all photos where user_id = div id
-
-        
-        // user_div.innerHTML += 
-
-        // `
-        // <button class="upload" id=${this.user_id} >Upload Photo</button></br>
-
-        // <img src='${this.img_src}'><p>${this.caption}</p>
-        // `
-
-        // user_div.addEventListener("click", handleClick)
-
     }
+    
 
 }
 
-// function handleClick() {
-//     const uploadListener = document.querySelector(`.upload, #${user_id}`)
-//     uploadListener.addEventListener("click", () => console.log("handleClick"))
-// }
