@@ -19,16 +19,17 @@ class User {
             <h3>Username: ${this.username}</h3>
             <li>${this.name} - ${this.email}</li>
             </ul>
+            <button class="upload" id='${this.user_id}' >Upload Photo</button></br>
             <button class="delete-bttn" data-id=${this.id} onClick="deleteUser()">Delete User</button>
             <div>
         `
-        // handleImageUpload()
+        handleImageUpload()
     }
 
     
 }
 
-// function handleImageUpload() {
-//     const uploadListener = document.querySelector(`.upload`)
-//     uploadListener.addEventListener("click", console.log("handleClick"))
-// }
+function handleImageUpload() {
+    const uploadListener = document.querySelector(`.upload`)
+    uploadListener.addEventListener("click", console.log("handleClick"))
+}
