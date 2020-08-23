@@ -11,18 +11,28 @@ class Photo {
     // instance method thats going to render the object to the dom
 
     renderPhoto() {
-        let user_div = document.getElementById(`${this.user_id}`)
+        const user_div = document.getElementById(`${this.user_id}`)
+        if (this.user_id == user_div.id) {
+            
+            user_div.innerHTML += 
+
+            `
+            <button class="upload" id=${this.user_id} >Upload Photo</button></br>
+    
+            <img src='${this.img_src}'><p>${this.caption}</p>
+            `
+        }
 
         // attach all photos where user_id = div id
 
         
-        user_div.innerHTML += 
+        // user_div.innerHTML += 
 
-        `
-        <button class="upload" id=${this.user_id} >Upload Photo</button></br>
+        // `
+        // <button class="upload" id=${this.user_id} >Upload Photo</button></br>
 
-        <img src='${this.img_src}'><p>${this.caption}</p>
-        `
+        // <img src='${this.img_src}'><p>${this.caption}</p>
+        // `
 
         // user_div.addEventListener("click", handleClick)
 
