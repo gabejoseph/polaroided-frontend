@@ -6,7 +6,6 @@ class Photo {
         this.img_src = img_src;
         this.caption = caption;
         this.user_id = user_id
-        console.log(this)
     }
 
     // instance method thats going to render the object to the dom
@@ -25,14 +24,13 @@ class Photo {
         <img src='${this.img_src}'><p>${this.caption}</p>
         `
 
-        user_div.addEventListener("click", handleClick)
+        // user_div.addEventListener("click", handleClick)
 
     }
 
 }
 
-function handleClick() {
-    const uploadListener = document.querySelector(`.upload, #${user_id}`)
-    uploadListener.addEventListener("click", () => console.log("handleClick"))
-
-}
+// function handleClick() {
+//     const uploadListener = document.querySelector(`.upload, #${user_id}`)
+//     uploadListener.addEventListener("click", () => console.log("handleClick"))
+// }

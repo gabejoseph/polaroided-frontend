@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
-    fetchImages()
     createForm()
     sortButton()
 })
@@ -18,6 +17,7 @@ function fetchUsers () {
             u.renderUser();
         }
     })
+    fetchImages()
 }
 
 function fetchImages () {
