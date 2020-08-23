@@ -16,8 +16,13 @@ function fetchUsers () {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
         }
+        addToForm(users)
     })
     fetchImages()
+}
+
+function addToForm (users) {
+    console.log(users)
 }
 
 function fetchImages () {
@@ -41,6 +46,7 @@ function createForm() {
         Username: <input type="text" id="username"></br>
         Email: <input type="text" id="email"></br>
         <input type="submit" value="Create User">
+
     </form>
     `
     usersForm.addEventListener("submit", userFormSubmission)
