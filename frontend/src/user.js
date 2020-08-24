@@ -22,18 +22,12 @@ class User {
             <button class="delete-bttn" data-id=${this.id} onClick="deleteUser()">Delete User</button>
             <div>
         `
-        // handleClick()
+
     }
 
     
 }
 
-// function handleClick() {
-//     const uploadListener = document.querySelector(`.upload`)
-//     uploadListener.addEventListener("submit", handleImageUpload)
-// }
-
-// function handleImageUpload () {
-//     const uploadListener = document.querySelector(`.upload`)
-//     console.log(uploadListener)
-// }
+function handleImageUpload() {
+    console.log("handle image upload")
+}

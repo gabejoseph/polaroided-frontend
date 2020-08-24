@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
     createForm()
+    createDropDown()
     sortButton()
 })
 
@@ -46,7 +47,6 @@ function fetchImages () {
 
 function createForm() {
     const usersForm = document.getElementById("users-form")
-
     usersForm.innerHTML += 
     `
     <form>
@@ -55,16 +55,32 @@ function createForm() {
         Email: <input type="text" id="email"></br>
         <input type="submit" value="Create User"></br>
         </br>
-        <form>
-            <label for="users">Choose a User:</label>
-            <select name="users" id="users">
-            </select>
-            <button class="upload" id='${this.user_id}' type='submit' >Upload Photo</button></br>
-        <form>
     </form>
     `
-
     usersForm.addEventListener("submit", userFormSubmission)
+
+}
+
+function createDropDown() {
+
+    const usersForm = document.getElementById("users-form")
+    usersForm.innerHTML += 
+    `
+    <form>
+        <label for="users">Choose a User to upload a photo:</label></br>
+        <select name="users" id="users">
+        </select></br>
+        <input value="Enter a valid URL here"/></br>
+        <button class="upload" id='${this.user_id}' type='submit' >Upload Photo</button></br>
+    <form>
+    `
+    handleSubmit()
+}
+
+function handleSubmit() {
+    const uploadListener = document.querySelector(`.upload`)
+    uploadListener.addEventListener("submit", handleImageUpload)
+
 }
 
 function userFormSubmission () {
