@@ -100,11 +100,12 @@ function createDropDown() {
         <input type="submit" />
     </form>
     `
-    usersForm.addEventListener("submit", handleImageUpload())
+    usersForm.addEventListener("submit", handleImageUpload)
 }
 
 function handleImageUpload() {
-    console.log("made it to handleImageUpload")
+    event.preventDefault()
+    debugger
 }
 
 // delete
