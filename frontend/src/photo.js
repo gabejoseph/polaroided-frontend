@@ -10,7 +10,8 @@ class Photo {
 
 
     renderPhoto() {
-        const user_div = document.querySelector(`#users-container div#${this.user_id}`)
+        console.log(this)
+        const user_div = document.querySelector(`.eachUser`)
         if (this.user_id == user_div.id) {
             
             user_div.innerHTML += 

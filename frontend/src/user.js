@@ -14,7 +14,7 @@ class User {
         const usersDiv = document.querySelector(".users-container")
         usersDiv.innerHTML += 
         `
-            <div id=${this.id}>
+            <div class="eachUser" id=${this.id}>
             <ul>
             <h3>Username: ${this.username}</h3>
             <li>${this.name} - ${this.email}</li>
