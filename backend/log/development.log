@@ -7914,3 +7914,231 @@ Processing by PhotosController#index as */*
 Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.7ms | Allocations: 2331)
 
 
+Started GET "//users" for ::1 at 2020-08-24 15:22:36 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:22:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Processing by PhotosController#index as */*
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 3356)
+
+
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 2495)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:22:39 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:22:39 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Processing by PhotosController#index as */*
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 2590)
+
+
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 2491)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:22:40 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:22:40 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 3123)
+
+
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4434)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:25:27 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:25:27 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 2332)
+
+
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 2279)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:26:08 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:26:08 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 3123)
+
+
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 4434)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:29:23 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:29:23 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 2279)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 4833)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:29:26 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 2439)
+
+
+Started GET "//photos" for ::1 at 2020-08-24 15:29:26 -0400
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 2279)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:29:57 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:29:57 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2279)
+
+
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 4822)
+
+
+Started GET "//photos" for ::1 at 2020-08-24 15:30:44 -0400
+Started GET "//users" for ::1 at 2020-08-24 15:30:44 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2893)
+
+
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 4638)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:30:46 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:30:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2318)
+
+
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 2282)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:32:14 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:32:14 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by PhotosController#index as */*
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2513)
+
+
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4015)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:40:13 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:40:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by PhotosController#index as */*
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 3350)
+
+
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 3846)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:42:13 -0400
+Started GET "//photos" for ::1 at 2020-08-24 15:42:13 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 3156)
+
+
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 4452)
+
+
+Started GET "//photos" for ::1 at 2020-08-24 15:42:15 -0400
+Started GET "//users" for ::1 at 2020-08-24 15:42:15 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by PhotosController#index as */*
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 2767)
+
+
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 4015)
+
+
+Started GET "//photos" for ::1 at 2020-08-24 15:43:01 -0400
+Started GET "//users" for ::1 at 2020-08-24 15:43:01 -0400
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Processing by UsersController#index as */*
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 2546)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2510)
+
+
+Started GET "//users" for ::1 at 2020-08-24 15:44:14 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "//photos" for ::1 at 2020-08-24 15:44:14 -0400
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2321)
+
+
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 2279)
+
+

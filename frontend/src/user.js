@@ -11,7 +11,7 @@ class User {
     // instance method thats going to render the object to the dom
 
     renderUser() {
-        const usersDiv = document.getElementById("users-container")
+        const usersDiv = document.querySelector(".users-container")
         usersDiv.innerHTML += 
         `
             <div id=${this.id}>

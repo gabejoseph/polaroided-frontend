@@ -24,12 +24,12 @@ function fetchUsers () {
 }
 
 function addToDropDown (user) {
-    const formsDiv = document.getElementById("users")
+    const formsDiv = document.querySelector("#users")
 
     formsDiv.innerHTML += 
 
     `
-        <option user-id="${user.id}" >${user.name}</option>
+        <option id="${user.id}" >${user.name}</option>
     `
 }
 
@@ -45,7 +45,7 @@ function fetchImages () {
 }
 
 function createForm() {
-    const usersForm = document.getElementById("users-form")
+    const usersForm = document.querySelector("#users-form")
     usersForm.innerHTML += 
     `
     <form>
@@ -89,7 +89,7 @@ function userFormSubmission () {
 
 function createDropDown() {
 
-    const usersForm = document.getElementById("dropdown-form")
+    const usersForm = document.querySelector("#dropdown-form")
     usersForm.innerHTML += 
     `
     <form>
@@ -105,6 +105,8 @@ function createDropDown() {
 
 function handleImageUpload() {
     event.preventDefault()
+    const userName = document.querySelector("#users").value
+    const userId = document.querySelector("#users option").blank
     debugger
 }
 
@@ -112,7 +114,6 @@ function handleImageUpload() {
 
 function deleteUser() {
     let userId = parseInt(event.target.dataset.id)
-    console.log(userId)
 
     fetch(`${BASE_URL}/users/${userId}`, {
         method: 'DELETE'
@@ -143,7 +144,7 @@ function sortUsers () {
             // names must be equal
             return 0;
           });
-        const usersDiv = document.getElementById("users-container")
+        const usersDiv = document.querySelector("#users-container")
         usersDiv.innerHTML = '' 
         renderUser(users)
     })
