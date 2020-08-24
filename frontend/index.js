@@ -15,28 +15,20 @@ function fetchUsers () {
         for (const user of users) {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
+            addToForm(user)
         }
-        addToForm(users)
+        
     })
     fetchImages()
 }
 
-function addToForm (users) {
-    console.log(users)
-
-    const formsDiv = document.getElementById("form-container")
+function addToForm (user) {
+    const formsDiv = document.getElementById("users")
 
     formsDiv.innerHTML += 
 
     `
-    <label for="cars">Choose a car:</label>
-
-    <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-    </select>
+        <option user-id="${user.id}" >${user.name}</option>
     `
     
 }
@@ -61,10 +53,13 @@ function createForm() {
         Name: <input type="text" id="name"></br>
         Username: <input type="text" id="username"></br>
         Email: <input type="text" id="email"></br>
-        <input type="submit" value="Create User">
-
+        <input type="submit" value="Create User"></br>
+        <label for="users">Choose a User:</label>
+        <select name="users" id="users">
+        </select>
     </form>
     `
+
     usersForm.addEventListener("submit", userFormSubmission)
 }
 
