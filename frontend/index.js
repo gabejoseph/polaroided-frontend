@@ -54,9 +54,13 @@ function createForm() {
         Username: <input type="text" id="username"></br>
         Email: <input type="text" id="email"></br>
         <input type="submit" value="Create User"></br>
-        <label for="users">Choose a User:</label>
-        <select name="users" id="users">
-        </select>
+        </br>
+        <form>
+            <label for="users">Choose a User:</label>
+            <select name="users" id="users">
+            </select>
+            <button class="upload" id='${this.user_id}' type='submit' >Upload Photo</button></br>
+        <form>
     </form>
     `
 
