@@ -61,28 +61,6 @@ function createForm() {
 
 }
 
-function createDropDown() {
-
-    const usersForm = document.getElementById("users-form")
-    usersForm.innerHTML += 
-    `
-    <form  class="upload" >
-        <label for="users">Choose a User to upload a photo:</label></br>
-        <select name="users" id="users">
-        </select></br>
-        <input value="Enter a valid URL here"/></br>
-        <button id='${this.user_id}' type='submit' >Upload Photo</button></br>
-    <form>
-    `
-    handleSubmit()
-}
-
-function handleSubmit() {
-    const uploadListener = document.querySelector(`.upload`)
-    uploadListener.addEventListener("submit", handleImageUpload)
-
-}
-
 function userFormSubmission () {
     event.preventDefault()
     const name = document.getElementById("name").value
@@ -108,6 +86,27 @@ function userFormSubmission () {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
         })
+}
+
+function createDropDown() {
+
+    const usersForm = document.getElementById("dropdown-form")
+    usersForm.innerHTML += 
+    `
+    <form class="upload" type="text" name="name">
+        <label for="users">Choose a User to upload a photo:</label></br>
+        <select name="users" id="users">
+        </select></br>
+        <input value="Enter a valid URL here"/></br>
+        <input type="submit" />
+    <form>
+    `
+    usersForm.addEventListener("submit", handleImageUpload)
+}
+
+function handleImageUpload() {
+    event.preventDefault()
+    debugger
 }
 
 // delete
