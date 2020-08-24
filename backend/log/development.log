@@ -6076,3 +6076,193 @@ Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.3ms | Allocations: 289
 Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 4642)
 
 
+Started GET "//users" for ::1 at 2020-08-24 11:21:34 -0400
+Started GET "//photos" for ::1 at 2020-08-24 11:21:34 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.4ms | Allocations: 2898)
+
+
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 4622)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:04:58 -0400
+Started GET "//photos" for ::1 at 2020-08-24 12:04:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhotosController#index as */*
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 2953)
+
+
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 4683)
+
+
+Started POST "//users" for ::1 at 2020-08-24 12:05:25 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "email"=>"", "user"=>{"name"=>"", "username"=>"", "email"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", ""], ["username", ""], ["email", ""], ["created_at", "2020-08-24 16:05:25.910208"], ["updated_at", "2020-08-24 16:05:25.910208"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 12ms (Views: 0.4ms | ActiveRecord: 7.3ms | Allocations: 2984)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:05:28 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Started GET "//photos" for ::1 at 2020-08-24 12:05:28 -0400
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 2483)
+
+
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 2296)
+
+
+Started POST "//users" for ::1 at 2020-08-24 12:05:30 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "email"=>"", "user"=>{"name"=>"", "username"=>"", "email"=>""}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", ""], ["username", ""], ["email", ""], ["created_at", "2020-08-24 16:05:30.594403"], ["updated_at", "2020-08-24 16:05:30.594403"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 10.5ms | Allocations: 2997)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:05:32 -0400
+Started GET "//photos" for ::1 at 2020-08-24 12:05:32 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 2893)
+
+
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 4940)
+
+
+Started GET "//photos" for ::1 at 2020-08-24 12:05:35 -0400
+Processing by PhotosController#index as */*
+Started GET "//users" for ::1 at 2020-08-24 12:05:35 -0400
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Processing by UsersController#index as */*
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 2776)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 4327)
+
+
+Started GET "//photos" for ::1 at 2020-08-24 12:06:45 -0400
+Started GET "//users" for ::1 at 2020-08-24 12:06:45 -0400
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Processing by UsersController#index as */*
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 2753)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 4275)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:07:03 -0400
+Started GET "//photos" for ::1 at 2020-08-24 12:07:03 -0400
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Processing by UsersController#index as */*
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.8ms | Allocations: 2753)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4327)
+
+
+Started POST "//users" for ::1 at 2020-08-24 12:07:17 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "email"=>"", "user"=>{"name"=>"", "username"=>"", "email"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", ""], ["username", ""], ["email", ""], ["created_at", "2020-08-24 16:07:17.075555"], ["updated_at", "2020-08-24 16:07:17.075555"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (24.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 32ms (Views: 0.3ms | ActiveRecord: 25.5ms | Allocations: 2591)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:07:25 -0400
+Started GET "//photos" for ::1 at 2020-08-24 12:07:25 -0400
+Processing by PhotosController#index as */*
+Processing by UsersController#index as */*
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 3119)
+
+
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 4897)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:07:46 -0400
+Started GET "//photos" for ::1 at 2020-08-24 12:07:46 -0400
+Processing by UsersController#index as */*
+Processing by PhotosController#index as */*
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 2282)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.5ms | Allocations: 5293)
+
+
+Started GET "//users" for ::1 at 2020-08-24 12:07:49 -0400
+Started GET "//photos" for ::1 at 2020-08-24 12:07:49 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Processing by PhotosController#index as */*
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 3026)
+
+
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/photos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 2474)
+
+
+Started POST "//users" for ::1 at 2020-08-24 12:07:52 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "email"=>"", "user"=>{"name"=>"", "username"=>"", "email"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", ""], ["username", ""], ["email", ""], ["created_at", "2020-08-24 16:07:52.125562"], ["updated_at", "2020-08-24 16:07:52.125562"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 0.4ms | ActiveRecord: 11.5ms | Allocations: 2970)
+
+

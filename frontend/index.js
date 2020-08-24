@@ -66,12 +66,12 @@ function createDropDown() {
     const usersForm = document.getElementById("users-form")
     usersForm.innerHTML += 
     `
-    <form>
+    <form  class="upload" >
         <label for="users">Choose a User to upload a photo:</label></br>
         <select name="users" id="users">
         </select></br>
         <input value="Enter a valid URL here"/></br>
-        <button class="upload" id='${this.user_id}' type='submit' >Upload Photo</button></br>
+        <button id='${this.user_id}' type='submit' >Upload Photo</button></br>
     <form>
     `
     handleSubmit()
