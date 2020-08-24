@@ -93,19 +93,18 @@ function createDropDown() {
     const usersForm = document.getElementById("dropdown-form")
     usersForm.innerHTML += 
     `
-    <form class="upload" type="text" name="name">
+    <form>
         <label for="users">Choose a User to upload a photo:</label></br>
         <select name="users" id="users">
         </select></br>
         <input value="Enter a valid URL here"/></br>
         <input type="submit" />
-    <form>
+    </form>
     `
-    usersForm.addEventListener("submit", handleImageUpload)
+    usersForm.addEventListener("submit", console.log("eventlistenerattached"))
 }
 
 function handleImageUpload() {
-    event.preventDefault()
     debugger
 }
 
