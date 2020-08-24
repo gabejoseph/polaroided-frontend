@@ -28,7 +28,3 @@ class User {
     
 }
 
-function handleImageUpload() {
-    const uploadForm = document.getElementsByClassName("upload")
-    console.log(uploadForm.value)
-}

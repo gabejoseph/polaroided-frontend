@@ -16,14 +16,14 @@ function fetchUsers () {
         for (const user of users) {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
-            addToForm(user)
+            addToDropDown(user)
         }
         
     })
     fetchImages()
 }
 
-function addToForm (user) {
+function addToDropDown (user) {
     const formsDiv = document.getElementById("users")
 
     formsDiv.innerHTML += 
@@ -31,7 +31,6 @@ function addToForm (user) {
     `
         <option user-id="${user.id}" >${user.name}</option>
     `
-    
 }
 
 function fetchImages () {
@@ -101,11 +100,11 @@ function createDropDown() {
         <input type="submit" />
     </form>
     `
-    usersForm.addEventListener("submit", console.log("eventlistenerattached"))
+    usersForm.addEventListener("submit", handleImageUpload())
 }
 
 function handleImageUpload() {
-    debugger
+    console.log("made it to handleImageUpload")
 }
 
 // delete
