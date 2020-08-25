@@ -80,7 +80,7 @@ function userFormSubmission () {
         },
         body: JSON.stringify(user)
     })
-        .then(resp => resp.json())
+        .then(resp => console.log(resp))
         .then(user => {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
@@ -96,7 +96,7 @@ function createDropDown() {
         <label for="users">Choose a User to upload a photo:</label></br>
         <select name="users" class="user-dropdown">
         </select></br>
-        <input value="URL"/></br>
+        <input value="URL" id="url" /></br>
         <input value="Caption" type="textarea" id="caption" /></br>
         <input type="submit" value="Upload" />
     </form>
@@ -108,6 +108,8 @@ function handleImageUpload() {
     event.preventDefault()
     let userName = document.querySelector(".user-dropdown").value
     let dropDownList = document.querySelectorAll(".user-dropdown option")
+    let caption = document.querySelector("#caption").value
+    let url = document.querySelector("#url").value
 
     for ( let dropDown of dropDownList ) {
         if ( dropDown.value === userName) {
@@ -116,6 +118,25 @@ function handleImageUpload() {
         }
     }
 
+    let photo = {
+        img_src: url, 
+        caption: caption,
+        user_id: user_id
+    }
+
+    fetch(`${BASE_URL}/photos`, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(photo)
+    })
+        .then(resp => resp.json())
+        .then(photo => {
+            const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
+            p.renderPhoto();
+    })
 }
 
 // delete
