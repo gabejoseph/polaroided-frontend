@@ -45,7 +45,7 @@ function fetchImages () {
 }
 
 function createForm() {
-    const usersForm = document.querySelector("#users-form")
+    const usersForm = document.querySelector(".users-form")
     usersForm.innerHTML += 
     `
     <form>
@@ -89,15 +89,16 @@ function userFormSubmission () {
 
 function createDropDown() {
 
-    const usersForm = document.querySelector("#dropdown-form")
+    const usersForm = document.querySelector(".dropdown-form")
     usersForm.innerHTML += 
     `
     <form>
         <label for="users">Choose a User to upload a photo:</label></br>
         <select name="users" id="users">
         </select></br>
-        <input value="Enter a valid URL here"/></br>
-        <input type="submit" />
+        <input value="URL"/></br>
+        <input value="Caption" type="textarea" id="caption" /></br>
+        <input type="submit" value="Upload" />
     </form>
     `
     usersForm.addEventListener("submit", handleImageUpload)
