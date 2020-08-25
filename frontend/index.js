@@ -109,11 +109,13 @@ function handleImageUpload() {
     let userName = document.querySelector(".user-dropdown").value
     let dropDownList = document.querySelectorAll(".user-dropdown option")
 
-    for (let dropDownOption of dropDownList) {
-        if ( dropDownOption.value === userName ) {
-            console.log(dropDownOption.id)
-        }
-    }
+    const user_id = () => {    
+        for (let dropDownOption of dropDownList) {
+            if ( dropDownOption.value === userName ) {
+                return dropDownOption.id
+            }
+    }}
+
     // const userId = document.querySelector("#users option").blank
     debugger
 }
