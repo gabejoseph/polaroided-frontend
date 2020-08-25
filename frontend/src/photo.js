@@ -22,8 +22,7 @@ class Photo {
         }
     }
 
-    
-
+    // refresh()
 }
 
 

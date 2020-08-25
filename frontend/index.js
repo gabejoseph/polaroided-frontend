@@ -114,7 +114,6 @@ function handleImageUpload() {
     for ( let dropDown of dropDownList ) {
         if ( dropDown.value === userName) {
             var user_id = dropDown.id
-            console.log(user_id)
         }
     }
 
@@ -157,6 +156,7 @@ function sortButton () {
 }
 
 function sortUsers () {
+    const usersDiv = document.querySelector(".users-container")
     fetch(`${BASE_URL}/users`)
     .then(resp => resp.json())
     .then(users => {
@@ -172,10 +172,15 @@ function sortUsers () {
           
             // names must be equal
             return 0;
-          });
-        const usersDiv = document.querySelector("#users-container")
-        usersDiv.innerHTML = '' 
-        renderUser(users)
+        });
+        usersDiv.innerHTML = ""
+        for ( let user of users ) {
+            const u = new User(user.id, user.name, user.username, user.email)
+            u.renderUser();
+            // addToDropDown(user)
+            // fetchImages()
+
+        }
     })
 
 
