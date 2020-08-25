@@ -10,19 +10,21 @@ class Photo {
 
 
     renderPhoto() {
-        debugger
-        const user_div = document.querySelector(`.users-container div#${this.user_id}.eachUser`)
-        if (this.user_id == user_div.id) {
+        const users_div = document.querySelectorAll(".eachUser")
+        for ( let user_div of users_div) {
+            if (this.user_id == user_div.id) {
+                user_div.innerHTML += 
             
-            user_div.innerHTML += 
-
-            `    
-            <img src='${this.img_src}'><p>${this.caption}</p>
-            `
+                `    
+                <img src='${this.img_src}'><p>${this.caption}</p>
+                `
+            }
         }
-
     }
+
     
 
 }
+
+
 
