@@ -24,7 +24,7 @@ function fetchUsers () {
 }
 
 function addToDropDown (user) {
-    const formsDiv = document.querySelector("#users")
+    const formsDiv = document.querySelector(".user-dropdown")
 
     formsDiv.innerHTML += 
 
@@ -94,7 +94,7 @@ function createDropDown() {
     `
     <form>
         <label for="users">Choose a User to upload a photo:</label></br>
-        <select name="users" id="users">
+        <select name="users" class="user-dropdown">
         </select></br>
         <input value="URL"/></br>
         <input value="Caption" type="textarea" id="caption" /></br>
@@ -106,8 +106,15 @@ function createDropDown() {
 
 function handleImageUpload() {
     event.preventDefault()
-    const userName = document.querySelector("#users").value
-    const userId = document.querySelector("#users option").blank
+    let userName = document.querySelector(".user-dropdown").value
+    let dropDownList = document.querySelectorAll(".user-dropdown option")
+
+    for (let dropDownOption of dropDownList) {
+        if ( dropDownOption.value === userName ) {
+            console.log(dropDownOption.id)
+        }
+    }
+    // const userId = document.querySelector("#users option").blank
     debugger
 }
 
