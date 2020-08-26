@@ -38,7 +38,7 @@ function fetchImages () {
     .then(resp => resp.json())
     .then(photos => {
         for (const photo of photos) {
-            const p = new Photo(photo.img_src, photo.caption, photo.user_id)
+            const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
             p.renderPhoto();
         }
     })
