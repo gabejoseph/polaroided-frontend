@@ -178,10 +178,8 @@ function sortUsers () {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
             // addToDropDown(user)
-            // fetchImages()
-
         }
     })
-
+    fetchImages()
 
 }
