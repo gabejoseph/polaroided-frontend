@@ -151,7 +151,7 @@ function deleteUser() {
 }
 
 function sortButton () {
-    const button = document.querySelector(".sort")
+    const button = document.querySelector("#sort")
     button.addEventListener("click", sortUsers)
 }
 

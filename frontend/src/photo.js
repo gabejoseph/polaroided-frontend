@@ -18,9 +18,9 @@ class Photo {
             
                 `   
                 <div class="mdc-card element-card">
-                    <img src='${this.img_src}'></br>
-                    <p>${this.caption}</p></br>
-                    <button class="delete-bttn" data-id=${this.id} onClick="deleteImg()">Delete Image</button></br>
+                        <img src='${this.img_src}' class="my-card__media mdc-card__media mdc-card__media--16-9"></br>
+                        <p>${this.caption}</p></br>
+                        <button class="delete-bttn" data-id=${this.id} onClick="deleteImg()">Delete Image</button></br>
                 </div>
                 `
             }
