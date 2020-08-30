@@ -10,6 +10,22 @@
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 50px;
+            }
+
+            /* Remove extra left and right margins, due to padding in columns */
+        .row {margin: 0 -5px;}
+
+            /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
         .cards {
           display: flex;
           flex-wrap: wrap;
@@ -18,19 +34,12 @@
         .element-card {
           width: 20em;
           margin: 16px;
-          display: inline-flex
         }
   
         .element-card > .mdc-card__media {
           height: 9em;
         }
   
-        #demo-absolute-fab {
-          position: fixed;
-          bottom: 1rem;
-          right: 1rem;
-          z-index: 1;
-        }
     </style>
 </head>
 <body>
