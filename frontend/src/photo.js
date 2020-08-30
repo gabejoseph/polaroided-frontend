@@ -16,10 +16,12 @@ class Photo {
             if (this.user_id == user_div.id) {
                 user_div.innerHTML += 
             
-                `    
-                <img src='${this.img_src}'></br>
-                <p>${this.caption}</p></br>
-                <button class="delete-bttn" data-id=${this.id} onClick="deleteImg()">Delete Image</button></br>
+                `   
+                <div class="mdc-card element-card">
+                    <img src='${this.img_src}'></br>
+                    <p>${this.caption}</p></br>
+                    <button class="delete-bttn" data-id=${this.id} onClick="deleteImg()">Delete Image</button></br>
+                </div>
                 `
             }
         }
