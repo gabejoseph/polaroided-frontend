@@ -14,12 +14,12 @@ class User {
         const usersDiv = document.querySelector(".users-container")
         usersDiv.innerHTML += 
         `
-        <div class="eachUser mdc-card mdc-card--outlined" id=${this.id}>
-            <div class="user-data-container" >
+            <div class="eachUser user-data-container mdc-card mdc-card--outlined" id=${this.id}>
                 <ul>
                     <h3>Username: ${this.username}</h3>
                     <li>${this.name} - ${this.email}</li>
                 </ul>
+                <div class="photo-container" id=${this.id} >
                 <button 
                     id="delete-bttn" 
                     data-id=${this.id} 
@@ -28,12 +28,7 @@ class User {
                     <div class="mdc-button__ripple"></div>
                     Delete User
                 </button>
-            </div>
-        </div>
         `
-
     }
-
-    
 }
 

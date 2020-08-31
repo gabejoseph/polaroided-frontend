@@ -11,26 +11,24 @@ class Photo {
 
 
     renderPhoto() {
-        const users_div = document.querySelectorAll(".eachUser")
+        const users_div = document.querySelectorAll(".photo-container")
         for ( let user_div of users_div) {
             if (this.user_id == user_div.id) {
                 user_div.innerHTML += 
             
                 `   
-                    <div class="column">
-                        <div class="mdc-card element-card">
-                            <img src='${this.img_src}' class="my-card__media"></br>
-                            <p>${this.caption}</p></br>
-                            <button 
-                                id="delete-bttn" 
-                                data-id=${this.id} 
-                                class="mdc-button foo-button"
-                                onClick="deleteImg()">
-                                <div class="mdc-button__ripple"></div>
-                                Delete Image
-                            </button></br>
-                        </div>    
-                    </div>
+                    <div class="mdc-card element-card" >
+                        <img src='${this.img_src}' class="my-card__media" ></br>
+                        <p>${this.caption}</p></br>
+                        <button 
+                            id="delete-bttn" 
+                            data-id=${this.id} 
+                            class="mdc-button foo-button"
+                            onClick="deleteImg()">
+                            <div class="mdc-button__ripple"></div>
+                            Delete Image
+                        </button></br>
+                    </div>  
                 `
             }
         }
