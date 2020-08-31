@@ -19,7 +19,11 @@ class Photo {
                 `   
                     <div class="column card" >
                         <img src='${this.img_src}' class="my-card__media" ></br>
-                        <p>${this.caption}</p></br>
+                        <p  
+                            mdc-typography 
+                            mdc-typography--body2>
+                            ${this.caption}
+                        </p></br>
                         <button 
                             id="delete-bttn" 
                             data-id=${this.id} 
