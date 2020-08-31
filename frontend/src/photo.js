@@ -17,11 +17,12 @@ class Photo {
                 user_div.innerHTML += 
             
                 `   
-                    <div class="column card" >
-                        <img src='${this.img_src}' class="my-card__media" ></br>
-                        <p  
-                            mdc-typography 
-                            mdc-typography--body2>
+                    <div class="column mdc-card demo-card" >
+                        <img src='${this.img_src}' 
+                        class="mdc-card__media mdc-card__media--16-9 demo-card__media" 
+                        style="background-image: url(&quot;https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg&quot;);"
+                        ></br>
+                        <p class="demo-card__secondary mdc-typography mdc-typography--body2" >
                             ${this.caption}
                         </p></br>
                         <button 
