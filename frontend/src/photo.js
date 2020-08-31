@@ -17,20 +17,19 @@ class Photo {
                 user_div.innerHTML += 
             
                 `   
-                <div class="column">
-                    <div class="mdc-card__media" >
+                    <div class="column card" >
                         <img src='${this.img_src}' class="my-card__media" ></br>
                         <p>${this.caption}</p></br>
                         <button 
                             id="delete-bttn" 
                             data-id=${this.id} 
                             class="mdc-button foo-button"
-                            onClick="deleteImg()">
-                            <div class="mdc-button__ripple"></div>
+                            onClick="deleteImg()
+                            mdc-button__ripple">
                             Delete Image
                         </button></br>
-                        </div>  
                     </div>  
+
                 `
             }
         }
