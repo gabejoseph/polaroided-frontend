@@ -1,5 +1,5 @@
-import Photo from './components/photo'
-import User from './components/user'
+import Photo from './photo'
+import User from './user'
 
 
 document.addEventListener("DOMContentLoaded", () => {

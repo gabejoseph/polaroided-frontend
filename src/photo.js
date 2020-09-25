@@ -1,7 +1,5 @@
 class Photo {
 
-
-
     constructor(id, img_src, caption, user_id) {
         this.id = id;
         this.img_src = img_src;
@@ -55,3 +53,4 @@ class Photo {
 //     this.location.reload()
 // }
 
+export default Photo
