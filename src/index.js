@@ -1,3 +1,7 @@
+import Photo from './components/photo'
+import User from './components/user'
+
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
     createForm()
@@ -61,7 +65,7 @@ function createForm() {
 }
 
 function userFormSubmission () {
-    event.preventDefault()
+    // event.preventDefault()
     const name = document.getElementById("name").value
     const username = document.getElementById("username").value
     const email = document.getElementById("email").value
@@ -105,7 +109,7 @@ function createDropDown() {
 }
 
 function handleImageUpload() {
-    event.preventDefault()
+    // event.preventDefault()
     let userName = document.querySelector(".user-dropdown").value
     let dropDownList = document.querySelectorAll(".user-dropdown option")
     let caption = document.querySelector("#caption").value
@@ -140,15 +144,15 @@ function handleImageUpload() {
 
 // delete
 
-function deleteUser() {
-    let userId = parseInt(event.target.dataset.id)
+// function deleteUser() {
+//     let userId = parseInt(event.target.dataset.id)
 
-    fetch(`${BASE_URL}/users/${userId}`, {
-        method: 'DELETE'
-    })
+//     fetch(`${BASE_URL}/users/${userId}`, {
+//         method: 'DELETE'
+//     })
     
-    this.location.reload()
-}
+//     this.location.reload()
+// }
 
 function sortButton () {
     const button = document.querySelector("#sort")
