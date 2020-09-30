@@ -24,12 +24,7 @@ class User {
                     </ul>
                 </div>
                 <div class="row" id=${this.id}></div>
-                <button 
-                    id="delete-bttn" 
-                    data-id=${this.id} 
-                    onClick=${deleteUser}
-                    class="mdc-button foo-button">
-                    <div class="mdc-button__ripple"></div>
+                <button id="delete-bttn" data-id=${this.id} onClick=${deleteUser} class="mdc-button foo-button" >
                     Delete User
                 </button>
         `
@@ -37,6 +32,7 @@ class User {
 }
 
 function deleteUser(event) {
+    event.preventDefault()
     console.log("deleteUser")
     let userId = parseInt(event.target.dataset.id)
 

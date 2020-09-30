@@ -27,7 +27,7 @@ function fetchUsers () {
     fetchImages()
 }
 
-function addToDropDown (user) {
+function addToDropDown (user) { 
     const formsDiv = document.querySelector(".user-dropdown")
 
     formsDiv.innerHTML += 
