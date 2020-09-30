@@ -43,14 +43,14 @@ class Photo {
 
 
 
-// function deleteImg() {
-//     const BASE_URL = "http://localhost:4000/"
-//     let imageId = parseInt(event.target.dataset.id)
+function deleteImg(event) {
+    const BASE_URL = "http://localhost:4000/"
+    let imageId = parseInt(event.target.dataset.id)
 
-//     fetch(`${BASE_URL}/photos/${imageId}`, {
-//         method: 'DELETE'
-//     })
-//     this.location.reload()
-// }
+    fetch(`${BASE_URL}/photos/${imageId}`, {
+        method: 'DELETE'
+    })
+    this.location.reload()
+}
 
 export default Photo

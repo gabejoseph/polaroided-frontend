@@ -64,8 +64,8 @@ function createForm() {
 
 }
 
-function userFormSubmission () {
-    // event.preventDefault()
+function userFormSubmission (event) {
+    event.preventDefault()
     const name = document.getElementById("name").value
     const username = document.getElementById("username").value
     const email = document.getElementById("email").value
@@ -84,7 +84,7 @@ function userFormSubmission () {
         },
         body: JSON.stringify(user)
     })
-        .then(resp => console.log(resp))
+        .then(resp => resp.json())
         .then(user => {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
@@ -108,8 +108,8 @@ function createDropDown() {
     usersForm.addEventListener("submit", handleImageUpload)
 }
 
-function handleImageUpload() {
-    // event.preventDefault()
+function handleImageUpload(event) {
+    event.preventDefault()
     let userName = document.querySelector(".user-dropdown").value
     let dropDownList = document.querySelectorAll(".user-dropdown option")
     let caption = document.querySelector("#caption").value
@@ -144,15 +144,15 @@ function handleImageUpload() {
 
 // delete
 
-// function deleteUser() {
-//     let userId = parseInt(event.target.dataset.id)
+function deleteUser(event) {
+    let userId = parseInt(event.target.dataset.id)
 
-//     fetch(`${BASE_URL}/users/${userId}`, {
-//         method: 'DELETE'
-//     })
+    fetch(`${BASE_URL}/users/${userId}`, {
+        method: 'DELETE'
+    })
     
-//     this.location.reload()
-// }
+    this.location.reload()
+}
 
 function sortButton () {
     const button = document.querySelector("#sort")
