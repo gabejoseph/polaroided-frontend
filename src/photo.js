@@ -44,7 +44,7 @@ class Photo {
 
 
 function deleteImg(event) {
-    const BASE_URL = "http://localhost:4000/"
+    const BASE_URL = "https://polaroided-backend.herokuapp.com"
     let imageId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/photos/${imageId}`, {
