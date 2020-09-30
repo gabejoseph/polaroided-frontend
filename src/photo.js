@@ -53,4 +53,5 @@ function deleteImg(event) {
     this.location.reload()
 }
 
+
 export default Photo
