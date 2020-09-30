@@ -15,7 +15,7 @@ class Photo {
                 user_div.innerHTML += 
             
                 `   
-                    <div class="column mdc-card demo-card" >
+                    <div class="column mdc-card demo-card">
                         <img src='${this.img_src}' 
                         class="mdc-card__media mdc-card__media--16-9 demo-card__media" 
                         style="background-image: url(&quot;https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg&quot;);"
@@ -27,8 +27,7 @@ class Photo {
                             id="delete-bttn" 
                             data-id=${this.id} 
                             class="mdc-button foo-button"
-                            onClick="deleteImg()
-                            mdc-button__ripple">
+                            onClick=${deleteImg}>
                             Delete Image
                         </button></br>
                     </div>  
@@ -44,6 +43,7 @@ class Photo {
 
 
 function deleteImg(event) {
+    console.log('delete image')
     const BASE_URL = "https://polaroided-backend.herokuapp.com"
     let imageId = parseInt(event.target.dataset.id)
 

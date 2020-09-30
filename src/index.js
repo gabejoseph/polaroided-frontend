@@ -142,18 +142,6 @@ function handleImageUpload(event) {
     })
 }
 
-// delete
-
-function deleteUser(event) {
-    let userId = parseInt(event.target.dataset.id)
-
-    fetch(`${BASE_URL}/users/${userId}`, {
-        method: 'DELETE'
-    })
-    
-    this.location.reload()
-}
-
 function sortButton () {
     const button = document.querySelector("#sort")
     button.addEventListener("click", sortUsers)

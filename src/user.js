@@ -1,3 +1,5 @@
+const BASE_URL = "https://polaroided-backend.herokuapp.com"
+
 class User {
     constructor(id, name, username, email) {
         this.id = id;
@@ -25,7 +27,7 @@ class User {
                 <button 
                     id="delete-bttn" 
                     data-id=${this.id} 
-                    onClick="deleteUser()"
+                    onClick=${deleteUser}
                     class="mdc-button foo-button">
                     <div class="mdc-button__ripple"></div>
                     Delete User
@@ -33,5 +35,18 @@ class User {
         `
     }
 }
+
+function deleteUser(event) {
+    console.log("deleteUser")
+    let userId = parseInt(event.target.dataset.id)
+
+    fetch(`${BASE_URL}/users/${userId}`, {
+        method: 'DELETE'
+    })
+    
+    this.location.reload()
+}
+
+
 
 export default User
