@@ -46,4 +46,5 @@ function deleteUser(event) {
     // this.location.reload()
 }
 
+
 export default User
