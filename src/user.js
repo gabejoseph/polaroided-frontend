@@ -24,23 +24,26 @@ class User {
                     </ul>
                 </div>
                 <div class="row" id=${this.id}></div>
-                <button id="delete-bttn" data-id=${this.id} onClick=${deleteUser} class="mdc-button foo-button" >
+                <button id="delete-bttn" data-id=${this.id} class="mdc-button foo-button" >
                     Delete User
                 </button>
         `
+        const usersForm = document.querySelector("#delete-bttn")
+        usersForm.addEventListener("click", deleteUser)
+
     }
 }
 
 function deleteUser(event) {
-    event.preventDefault()
     console.log("deleteUser")
+    event.preventDefault()
     let userId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/users/${userId}`, {
         method: 'DELETE'
     })
     
-    this.location.reload()
+    // this.location.reload()
 }
 
 export default User

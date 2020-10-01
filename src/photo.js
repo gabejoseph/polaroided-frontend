@@ -27,7 +27,7 @@ class Photo {
                             id="delete-bttn" 
                             data-id=${this.id} 
                             class="mdc-button foo-button"
-                            onClick=${deleteImg}>
+                            onClick="deleteUser()">
                             Delete Image
                         </button></br>
                     </div>  
@@ -35,6 +35,7 @@ class Photo {
                 `
             }
         }
+
     }
     
 }
