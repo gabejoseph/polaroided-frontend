@@ -1,12 +1,15 @@
 // import Home from './containers/Home'
 // import Header from './components/Header'
-import Footer from './components/Footer'
+import Footer from './Footer'
+import React from 'react';
+
 
 function App() {
   return (
       <div className="app" >
 
-          <Header />
+          {/* <Header /> */}
+
           <Footer />
 
 
@@ -14,3 +17,6 @@ function App() {
       </div>
   );
 }
+
+export default App
+

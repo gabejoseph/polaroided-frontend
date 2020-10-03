@@ -2,12 +2,24 @@ import Photo from './photo'
 import User from './user'
 import './Footer.css'
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+
+ReactDOM.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>,
+    document.getElementById('root')
+);
+  
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
     createForm()
     createDropDown()
     sortButton()
-    renderFooter()
 })
 
 const BASE_URL = "https://polaroided-backend.herokuapp.com"
@@ -179,14 +191,3 @@ function sortUsers () {
 
 }
 
-function renderFooter() { 
-    const footer = document.querySelector(".footer-container")
-    console.log(footer)
-    footer.innerHTML += 
-    `
-    <div className="footer">
-        <p>No rights reserved.  Demo purposes only.</p>
-        <p>Privacy · Terms · Sitemap</p>
-    </div>
-    `
-}
