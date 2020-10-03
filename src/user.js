@@ -8,6 +8,8 @@ class User {
         this.email = email;
     }
 
+    
+
 
 
     // instance method thats going to render the object to the dom
@@ -37,7 +39,7 @@ class User {
 
 
 function deleteUser(event) {
-    console.log(this.location)
+    console.log('delete user')
     event.preventDefault()
     let userId = parseInt(event.target.dataset.id)
 

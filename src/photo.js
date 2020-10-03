@@ -9,7 +9,6 @@ class Photo {
         this.user_id = user_id
     }
 
-
     renderPhoto() {
         const users_div = document.querySelectorAll(".row")
         for ( let user_div of users_div) {
@@ -19,14 +18,14 @@ class Photo {
                 `   
                     <div class="column mdc-card demo-card">
                         <img src='${this.img_src}' 
-                        class="mdc-card__media mdc-card__media--16-9 demo-card__media" 
+                        class="mdc-card__media mdc-card__media--16-9" 
                         style="background-image: url(&quot;https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg&quot;);"
                         ></br>
                         <p class="demo-card__secondary mdc-typography mdc-typography--body2" >
                             ${this.caption}
                         </p></br>
                         <button 
-                            id="delete-bttn" 
+                            id="img-delete" 
                             data-id=${this.id} 
                             class="mdc-button foo-button"
                             >
@@ -35,8 +34,8 @@ class Photo {
                     </div>  
 
                 `
-                const usersForm = document.querySelector("#delete-bttn")
-                usersForm.addEventListener("click", deleteImg)
+                const imgForm = document.querySelector("#img-delete")
+                imgForm.addEventListener("click", deleteImg)
             }
         }
 
@@ -44,14 +43,14 @@ class Photo {
     
 }
 
-function deleteImg(event) {
-    console.log('delete image')
+function deleteImg (event) {
+    event.preventDefault()
     let imageId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/photos/${imageId}`, {
         method: 'DELETE'
     })
-    
+
     window.location.reload()
 }
 
