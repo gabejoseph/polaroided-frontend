@@ -16,18 +16,15 @@ class Photo {
                 user_div.innerHTML += 
             
                 `   
-                    <div class="column mdc-card demo-card">
+                    <div>
                         <img src='${this.img_src}' 
-                        class="mdc-card__media mdc-card__media--16-9" 
-                        style="background-image: url(&quot;https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg&quot;);"
                         ></br>
-                        <p class="demo-card__secondary mdc-typography mdc-typography--body2" >
+                        <p>
                             ${this.caption}
                         </p></br>
                         <button 
                             id="img-delete" 
                             data-id=${this.id} 
-                            class="mdc-button foo-button"
                             >
                             Delete Image
                         </button></br>

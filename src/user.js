@@ -1,3 +1,5 @@
+import './Card.css'
+
 const BASE_URL = "https://polaroided-backend.herokuapp.com"
 
 class User {
@@ -18,7 +20,7 @@ class User {
         const usersDiv = document.querySelector(".users-container")
         usersDiv.innerHTML += 
         `
-            <div class="eachUser class="user-container" id=${this.id}>
+            <div class="eachUser user-container card" id=${this.id}>
                 <div class="card-header">
                     <ul>
                         <h3>Username: ${this.username}</h3>
@@ -26,7 +28,7 @@ class User {
                     </ul>
                 </div>
                 <div class="row" id=${this.id}></div>
-                <button id="delete-bttn" data-id=${this.id} class="mdc-button foo-button" >
+                <button id="delete-bttn" data-id=${this.id}  >
                     Delete User
                 </button>
         `
