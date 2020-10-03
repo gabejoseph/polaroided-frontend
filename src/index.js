@@ -1,6 +1,6 @@
 import Photo from './photo'
 import User from './user'
-import { Footer } from './Footer'
+import Footer from './Footer'
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
