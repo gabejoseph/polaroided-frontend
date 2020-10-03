@@ -32,18 +32,20 @@ class User {
         usersForm.addEventListener("click", deleteUser)
 
     }
+    
 }
 
+
 function deleteUser(event) {
-    console.log("deleteUser")
+    console.log(this.location)
     event.preventDefault()
     let userId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/users/${userId}`, {
         method: 'DELETE'
     })
-    
-    // this.location.reload()
+
+    window.location.reload()
 }
 
 

@@ -1,3 +1,5 @@
+const BASE_URL = "https://polaroided-backend.herokuapp.com"
+
 class Photo {
 
     constructor(id, img_src, caption, user_id) {
@@ -27,12 +29,14 @@ class Photo {
                             id="delete-bttn" 
                             data-id=${this.id} 
                             class="mdc-button foo-button"
-                            onClick="deleteUser()">
+                            >
                             Delete Image
                         </button></br>
                     </div>  
 
                 `
+                const usersForm = document.querySelector("#delete-bttn")
+                usersForm.addEventListener("click", deleteImg)
             }
         }
 
@@ -40,18 +44,15 @@ class Photo {
     
 }
 
-
-
-
 function deleteImg(event) {
     console.log('delete image')
-    const BASE_URL = "https://polaroided-backend.herokuapp.com"
     let imageId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/photos/${imageId}`, {
         method: 'DELETE'
     })
-    this.location.reload()
+    
+    window.location.reload()
 }
 
 

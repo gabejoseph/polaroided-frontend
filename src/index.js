@@ -89,6 +89,7 @@ function userFormSubmission (event) {
             const u = new User(user.id, user.name, user.username, user.email)
             u.renderUser();
         })
+    window.location.reload()
 }
 
 function createDropDown() {
