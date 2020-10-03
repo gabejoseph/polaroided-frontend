@@ -55,4 +55,5 @@ function deleteImg (event) {
 }
 
 
+
 export default Photo
