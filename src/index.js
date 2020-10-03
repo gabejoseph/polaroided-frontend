@@ -1,12 +1,13 @@
 import Photo from './photo'
 import User from './user'
-import Footer from './Footer'
+import './Footer.css'
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers()
     createForm()
     createDropDown()
     sortButton()
+    renderFooter()
 })
 
 const BASE_URL = "https://polaroided-backend.herokuapp.com"
@@ -176,4 +177,16 @@ function sortUsers () {
     })
     fetchImages()
 
+}
+
+function renderFooter() { 
+    const footer = document.querySelector(".footer-container")
+    console.log(footer)
+    footer.innerHTML += 
+    `
+    <div className="footer">
+        <p>No rights reserved.  Demo purposes only.</p>
+        <p>Privacy · Terms · Sitemap</p>
+    </div>
+    `
 }
