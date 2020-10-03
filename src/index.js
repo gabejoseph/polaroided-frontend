@@ -90,6 +90,7 @@ function userFormSubmission (event) {
             u.renderUser();
         })
     window.location.reload()
+    
 }
 
 function createDropDown() {
