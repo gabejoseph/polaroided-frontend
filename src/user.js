@@ -63,78 +63,34 @@ function deleteUser(event) {
 
 export default User
 
-// import Button from '@material-ui/core/Button';
-// import Menu from '@material-ui/core/Menu';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import { Avatar } from "@material-ui/core"
-// import { Link } from 'react-router-dom'
-// import { connect } from 'react-redux'
-// import { userActions } from '../actions/user.actions'
 
-
-
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       anchorEl: null
-//     }
-
-//     // this.handleClick = this.handleClick.bind(this)
-//     this.handleClose = this.handleClose.bind(this)
-//     // this.handleLogout = this.handleLogout.bind(this)
-//   }
-
-//   handleClick(event) {
-//     this.setState({
-//       anchorEl: event.currentTarget
-//     })
-//   }
-
-//   handleClose() {
-//     this.setState({
-//       anchorEl: null
-//     })
-//   };
-
-//   handleLogout() {
-//     this.props.logout();
-//     this.handleClose();
-//   }
-
-//   render() {
-
-//     const local = localStorage
-
-//     return (
-//       <div>
-//           <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.handleClick(event)}>
-//               <Avatar />
-//           </Button>
-//           <Menu
-//               id="simple-menu"
-//               anchorEl={this.state.anchorEl}
-//               keepMounted
-//               open={Boolean(this.state.anchorEl)}
-//               onClose={() => this.handleClose()}
-//           >
-//              {local.user ? <MenuItem onClick={() => this.handleLogout()}>Logout</MenuItem> : 
-//                <div>
-//                  <Link to='/login' ><MenuItem onClick={() => this.handleClose()}>Login / Register</MenuItem></Link>
-//                  <MenuItem onClick={() => this.handleLogout()}>Logout</MenuItem>   
-//                </div>
-//              }
-//           </Menu>
-//       </div>
-//     );
-//   }
+// {loading ? <h1>loading...</h1>  :
+                
+//     (this.state.listings.length > 0 ? 
+//         this.state.listings.map(result =>
+//             <SearchResult 
+//                 key = {result.id}
+//                 img = {result.img}
+//                 location= {result.location}
+//                 title= {result.title}
+//                 description= {result.description}
+//                 star= {result.star}
+//                 price= {result.price}
+//                 total= {result.total}
+//             />
+//         )
+    
+//     :
+//     this.props.listing.map(result =>
+//         <SearchResult 
+//             key = {result.id}
+//             img = {result.img}
+//             location= {result.location}
+//             title= {result.title}
+//             description= {result.description}
+//             star= {result.star}
+//             price= {result.price}
+//             total= {result.total}
+//         />
+//     ))
 // }
-
-// const actionCreators = {
-//   logout: userActions.logout
-// };
-
-// export default connect(null, actionCreators)(SimpleMenu)
-
-
-
