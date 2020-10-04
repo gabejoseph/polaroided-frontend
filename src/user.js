@@ -12,6 +12,15 @@ class User extends React.Component {
         this.name = name;
         this.username = username;
         this.email = email;
+
+        this.state = { 
+            id,
+            name,
+            username,
+            email,
+        };
+    
+        console.log(this.state)
     }
 
     
@@ -22,21 +31,24 @@ class User extends React.Component {
 
     render() {
         const usersDiv = document.querySelector(".users-container")
-
         return (
-        
-            <div class="eachUser user-container card" id={this.id}>
-                <div class="card-header">
-                    <ul>
-                        <h3>Username: {this.username}</h3>
-                        <li>{this.name} - {this.email}</li>
-                    </ul>
-                </div>
-                <div class="row" id={this.id}></div>
-                <button id={this.id}  >
-                    Delete User
-                </button>
-        </div>
+            <div />
+            // this.state.map(result => 
+            //     <div class="eachUser user-container card" id={result.id}>
+            //     {/* <div class="card-header">
+            //         <ul>
+            //             <h3>Username: {this.username}</h3>
+            //             <li>{this.name} - {this.email}</li>
+            //         </ul>
+            //     </div>
+            //     <div class="row" id={this.id}></div> */}
+            //         <button id={this.id}  >
+            //             Delete User
+            //         </button>
+            //     </div>
+
+            // )
+
 
         
         )
