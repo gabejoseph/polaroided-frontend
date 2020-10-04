@@ -32,7 +32,7 @@ function fetchUsers () {
     .then(users => {
         for (const user of users) {
             const u = new User(user.id, user.name, user.username, user.email)
-            u.renderUser();
+            <User  >
             addToDropDown(user)
         }
         
