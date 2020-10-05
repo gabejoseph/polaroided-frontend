@@ -40,7 +40,11 @@ class User extends React.Component {
         return (
             <div>
                 {
-                this.state.users.length === 0 ? <p>No Data</p> : <p>{this.state.users[0].name}</p>
+                this.state.users.length === 0 
+                ? 
+                <p>No Data</p> 
+                : 
+                this.state.users.map(result => <div class="eachUser user-container card" id={result.id}></div>)
                 }
             </div>
             // this.state.map(result => 
