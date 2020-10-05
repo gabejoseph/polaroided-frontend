@@ -17,22 +17,40 @@ class User extends React.Component {
             id,
             name,
             username,
-            email,
+            email
         };
+
+        
     
-        console.log(this.state)
     }
 
-    
+    componentDidMount() {
+        fetch(`${BASE_URL}/users`)
+        .then(resp => resp.json())
+        .then(users => {
+            for (const user of users) {
+                this.setState([{
+                    id: user.id,
+                    name: user.name,
+                    username: user.username,
+                    email: user.email
+                }])
+                // addToDropDown(user)
+            }
+            
+        })
+        // fetchImages()
+    }
 
 
 
     // instance method thats going to render the object to the dom
 
     render() {
-        const usersDiv = document.querySelector(".users-container")
+        console.log(this.state)
         return (
-            <div />
+            
+            <div> {this.state}</div>
             // this.state.map(result => 
             //     <div class="eachUser user-container card" id={result.id}>
             //     {/* <div class="card-header">
