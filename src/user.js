@@ -1,5 +1,6 @@
 import './Card.css'
 import React from 'react';
+import Button from '@material-ui/core/Button'
 
 
 const BASE_URL = "https://polaroided-backend.herokuapp.com"
@@ -44,27 +45,22 @@ class User extends React.Component {
                 ? 
                 <p>No Data</p> 
                 : 
-                this.state.users.map(result => <div class="eachUser user-container card" id={result.id}></div>)
+                this.state.users.map(result => 
+                <div class="eachUser user-container card" id={result.id}>
+                    <div class="card-header">
+                        <ul>
+                            <h3>Username: {result.username}</h3>
+                            <li>{result.name} - {result.email}</li>
+                        </ul>
+                    </div>
+                    <div class="row" id={result.id}></div>
+                    <Button id={result.id} onClick={deleteUser} >
+                         Delete User
+                    </Button>
+                </div>)
                 }
             </div>
-            // this.state.map(result => 
-            //     <div class="eachUser user-container card" id={result.id}>
-            //     {/* <div class="card-header">
-            //         <ul>
-            //             <h3>Username: {this.username}</h3>
-            //             <li>{this.name} - {this.email}</li>
-            //         </ul>
-            //     </div>
-            //     <div class="row" id={this.id}></div> */}
-            //         <button id={this.id}  >
-            //             Delete User
-            //         </button>
-            //     </div>
 
-            // )
-
-
-        
         )
     }
     
@@ -88,35 +84,3 @@ function deleteUser(event) {
 
 
 export default User
-
-
-// {loading ? <h1>loading...</h1>  :
-                
-//     (this.state.listings.length > 0 ? 
-//         this.state.listings.map(result =>
-//             <SearchResult 
-//                 key = {result.id}
-//                 img = {result.img}
-//                 location= {result.location}
-//                 title= {result.title}
-//                 description= {result.description}
-//                 star= {result.star}
-//                 price= {result.price}
-//                 total= {result.total}
-//             />
-//         )
-    
-//     :
-//     this.props.listing.map(result =>
-//         <SearchResult 
-//             key = {result.id}
-//             img = {result.img}
-//             location= {result.location}
-//             title= {result.title}
-//             description= {result.description}
-//             star= {result.star}
-//             price= {result.price}
-//             total= {result.total}
-//         />
-//     ))
-// }
