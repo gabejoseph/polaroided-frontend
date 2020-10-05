@@ -6,19 +6,16 @@ const BASE_URL = "https://polaroided-backend.herokuapp.com"
 
 class User extends React.Component {
     
-    constructor(id, name, username, email) {
+    constructor() {
         super()
-        this.id = id;
-        this.name = name;
-        this.username = username;
-        this.email = email;
+        // this.id = id;
+        // this.name = name;
+        // this.username = username;
+        // this.email = email;
 
-        this.state = { 
-            id,
-            name,
-            username,
-            email
-        };
+        this.state = {
+            users: []
+        }
 
         
     
@@ -28,16 +25,9 @@ class User extends React.Component {
         fetch(`${BASE_URL}/users`)
         .then(resp => resp.json())
         .then(users => {
-            for (const user of users) {
-                this.setState([{
-                    id: user.id,
-                    name: user.name,
-                    username: user.username,
-                    email: user.email
-                }])
-                // addToDropDown(user)
-            }
-            
+            this.setState({
+                users: users
+            })
         })
         // fetchImages()
     }
@@ -47,10 +37,12 @@ class User extends React.Component {
     // instance method thats going to render the object to the dom
 
     render() {
-        console.log(this.state)
         return (
-            
-            <div> {this.state}</div>
+            <div>
+                {
+                this.state.users.length === 0 ? <p>No Data</p> : <p>{this.state.users[0].name}</p>
+                }
+            </div>
             // this.state.map(result => 
             //     <div class="eachUser user-container card" id={result.id}>
             //     {/* <div class="card-header">
