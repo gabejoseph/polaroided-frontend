@@ -116,3 +116,34 @@ export default User
                 //             </ul>
                 //         </div>
                 //     <div class="row" id={result.id}></div>
+
+                // {loading ? <h1>loading...</h1>  :
+                
+                //     (this.state.listings.length > 0 ? 
+                //         this.state.listings.map(result =>
+                //             <SearchResult 
+                //                 key = {result.id}
+                //                 img = {result.img}
+                //                 location= {result.location}
+                //                 title= {result.title}
+                //                 description= {result.description}
+                //                 star= {result.star}
+                //                 price= {result.price}
+                //                 total= {result.total}
+                //             />
+                //         )
+                    
+                //     :
+                //     this.props.listing.map(result =>
+                //         <SearchResult 
+                //             key = {result.id}
+                //             img = {result.img}
+                //             location= {result.location}
+                //             title= {result.title}
+                //             description= {result.description}
+                //             star= {result.star}
+                //             price= {result.price}
+                //             total= {result.total}
+                //         />
+                //     ))
+                // }

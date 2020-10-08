@@ -44,7 +44,6 @@ export default class Photo extends React.Component {
     render () {
         const photos_div = document.querySelectorAll(".row")
         const photos = this.state.photos
-        console.log(photos)
 
         return (
             <div>
@@ -52,8 +51,13 @@ export default class Photo extends React.Component {
                 ? 
                 <p>No Data</p> 
                 : 
-                photos.map(result => {
-                    console.log(result.id)
+                photos.map(photo => {
+                    for ( let photo_div of photos_div ) {
+                        if ( photo.user_id == photo_div.id ) {
+                            console.log(photo, photo_div)
+                        }
+                    }
+
                     
                 })
                 }
