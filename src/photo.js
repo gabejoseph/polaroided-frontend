@@ -40,15 +40,22 @@ export default class Photo extends React.Component {
         window.location.reload()
     }
 
+
     render () {
         const photos_div = document.querySelectorAll(".row")
+        const photos = this.state.photos
+        console.log(photos)
+
         return (
             <div>
                 {this.state.photos.length === 0 
                 ? 
                 <p>No Data</p> 
                 : 
-                <p>Data</p>
+                photos.map(result => {
+                    console.log(result.id)
+                    
+                })
                 }
             </div>
         )
