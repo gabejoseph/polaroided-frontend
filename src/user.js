@@ -30,7 +30,6 @@ class User extends React.Component {
                 users: users
             })
         })
-        // fetchImages()
     }
 
 
