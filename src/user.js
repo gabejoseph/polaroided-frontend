@@ -1,6 +1,7 @@
 import './Card.css'
 import React from 'react';
 import Button from '@material-ui/core/Button'
+import Photo from './photo'
 
 
 const BASE_URL = "https://polaroided-backend.herokuapp.com"
@@ -53,6 +54,7 @@ class User extends React.Component {
                         </ul>
                     </div>
                     <div class="row" id={result.id}></div>
+                    <Photo />
                     <Button id={result.id} onClick={deleteUser} >
                          Delete User
                     </Button>
@@ -83,3 +85,34 @@ function deleteUser(event) {
 
 
 export default User
+
+            // for ( let user_div of users_div) {
+            //     if (this.user_id == user_div.id) {
+            //         user_div.innerHTML += 
+                
+            //         `   
+            //             <div>
+            //                 <img src='${this.img_src}' 
+            //                 ></br>
+            //                 <p>
+            //                     ${this.caption}
+            //                 </p></br>
+            //                 <button 
+            //                     id="img-delete" 
+            //                     data-id=${this.id} 
+            //                     >
+            //                     Delete Image
+            //                 </button></br>
+            //             </div>  
+            // </div>
+
+                // <div>
+                //     for ( let photos_div of photos_div)
+                //     <div class="eachUser user-container card" id={result.id}>
+                //         <div class="card-header">
+                //             <ul>
+                //                 <h3>Username: {result.username}</h3>
+                //                 <li>{result.name} - {result.email}</li>
+                //             </ul>
+                //         </div>
+                //     <div class="row" id={result.id}></div>
