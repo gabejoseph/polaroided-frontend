@@ -6,6 +6,7 @@ import Header from './Header'
 import User from './user'
 import Photo from './photo'
 import './App.css'
+import Post from './Post'
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
 
 
           <Header className="app__header" />
-          <User />
+          <Post />
+          {/* <User /> */}
           <Footer />
 
 
