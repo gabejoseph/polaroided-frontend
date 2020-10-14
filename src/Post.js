@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar'
 function Post() {
     return (
         <div className="post" >
-            <div className="post_header">
+            <div className="post__header">
                 <Avatar 
                     className="post__avatar"
                     alt='RafeQazi'
@@ -23,7 +23,7 @@ function Post() {
             {/* username + caption */}
 
         </div>
-    )
+    ) 
 }
 
 export default Post
