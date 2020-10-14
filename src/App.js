@@ -1,15 +1,29 @@
 // import Home from './containers/Home'
 // import Header from './components/Header'
-import Footer from './Footer'
+import { useState } from 'react';
+import Footer from './Footer';
 import React from 'react';
-import Header from './Header'
-import User from './user'
+import Header from './Header';
+import User from './user';
 import Photo from './photo'
-import './App.css'
-import Post from './Post'
+import './App.css';
+import Post from './Post';
 
 
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      username: "",
+      caption: "",
+      imageUrl: ""
+    },
+    {
+      username: "",
+      caption: "",
+      imageUrl: ""
+    }
+  ]);
+
   return (
       <div className="App" >
           <div className="app__header" >
