@@ -8,6 +8,7 @@ import User from './user';
 import Photo from './photo'
 import './App.css';
 import Post from './Post';
+import Component from 'react'
 
 
 function App() {
@@ -24,12 +25,14 @@ function App() {
     }
   ]);
 
+
+
   return (
       <div className="App" >
           <div className="app__header" >
             <img 
               className="app__headerImage"
-              src="https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"
+              src="https://i.imgur.com/ZwFwl3E.jpg"
               alt=""
             />
             {/* <User /> */}
