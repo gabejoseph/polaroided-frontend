@@ -13,26 +13,21 @@ import Component from 'react'
 
 function App() {
   const BASE_URL = "https://polaroided-backend.herokuapp.com"
-  const [posts, setPosts] = useState([
-    {
-      username: "cleverqazi",
-      caption: "Wow it works",
-      imageUrl: "https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"
-    }
-  ]);
+  const [posts, setPosts] = useState([]);
+  const [photos, setPhotos] = useState([]);
 
   // useEffect Runs a piece of code based on a specific condition
 
   useEffect(() => {
     fetch(`${BASE_URL}/users`)
     .then(resp => resp.json())
-    .then(users => console.log(users))
+    .then(users => setPosts(users))
   }, [])
 
   useEffect(() => {
     fetch(`${BASE_URL}/photos`)
     .then(resp => resp.json())
-    .then(photos => console.log(photos))  
+    .then(photos => setPhotos(photos))  
   }, [])
 
   return (
@@ -45,13 +40,19 @@ function App() {
             />
           </div>
 
+          {console.log(posts, photos)}
+
           {
             posts.map(post => (
-              <Post 
-                username={post.username}
-                caption={post.caption}
-                imageUrl={post.imageUrl}
-              />
+              photos.filter(photo => {
+                if (photo.user_id == post.id) {
+                  <Post 
+                  username={post.username}
+                  caption={post.caption}
+                  imageUrl={photo.imageUrl}
+                  />
+                }
+              })
             ))
           }
 
