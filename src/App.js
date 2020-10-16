@@ -22,14 +22,18 @@ function App() {
   ]);
 
   // useEffect Runs a piece of code based on a specific condition
+
   useEffect(() => {
-    //this is where the code runs
     fetch(`${BASE_URL}/users`)
     .then(resp => resp.json())
-    .then(users => {
-      users.map()
+    .then(users => console.log(users))
   }, [])
 
+  useEffect(() => {
+    fetch(`${BASE_URL}/photos`)
+    .then(resp => resp.json())
+    .then(photos => console.log(photos))  
+  }, [])
 
   return (
       <div className="App" >
@@ -56,4 +60,3 @@ function App() {
 }
 
 export default App
-
