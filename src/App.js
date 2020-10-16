@@ -31,11 +31,6 @@ function App() {
   }, [])
 
 
-  handleState = () => {
-
-  }
-
-
   return (
       <div className="App" >
           <div className="app__header" >
@@ -47,8 +42,8 @@ function App() {
           </div>
 
 
-      {
-        this.handleState()       
+      { 
+
       }
 
       </div>
