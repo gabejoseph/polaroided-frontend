@@ -31,6 +31,9 @@ function App() {
   }, [])
 
 
+  handleState = () => {
+
+  }
 
 
   return (
@@ -45,11 +48,7 @@ function App() {
 
 
       {
-        posts.map(post => photos.map(photo => 
-          {if (post.id === photo.user_id) {
-            console.log(post.id === photo.user_id)
-          }}
-        ))        
+        this.handleState()       
       }
 
       </div>
