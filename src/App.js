@@ -30,6 +30,9 @@ function App() {
     .then(photos => setPhotos(photos))  
   }, [])
 
+
+
+
   return (
       <div className="App" >
           <div className="app__header" >
@@ -43,17 +46,7 @@ function App() {
           {console.log(posts, photos)}
 
           {
-            posts.map(post => (
-              photos.filter(photo => {
-                if (photo.user_id == post.id) {
-                  <Post 
-                  username={post.username}
-                  caption={post.caption}
-                  imageUrl={photo.imageUrl}
-                  />
-                }
-              })
-            ))
+            console.log(difference)
           }
 
       </div>
