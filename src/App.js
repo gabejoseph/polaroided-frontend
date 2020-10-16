@@ -13,14 +13,14 @@ import Post from './Post';
 function App() {
   const [posts, setPosts] = useState([
     {
-      username: "",
-      caption: "",
-      imageUrl: ""
+      username: "cleverqazi",
+      caption: "Wow it works",
+      imageUrl: "https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"
     },
     {
-      username: "",
-      caption: "",
-      imageUrl: ""
+      username: "cleverclever",
+      caption: "Wow",
+      imageUrl: "https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"
     }
   ]);
 
@@ -34,9 +34,17 @@ function App() {
             />
             {/* <User /> */}
           </div>
-          <Post username="cleverqazi" caption="Wow it works" imageUrl="https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale" />
-          <Post username="Gabe" caption="heyhey" imageUrl="https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale" />
-          <Post username="Mal" caption="oknow" imageUrl="https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"/>
+
+          {
+            posts.map(post => (
+              <Post 
+                username={post.username}
+                caption={post.caption}
+                imageUrl={post.imageUrl}
+              />
+            ))
+          }
+
       </div>
   );
 }
