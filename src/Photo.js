@@ -2,13 +2,16 @@ import React from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import './Photo.css'
 
-function Photo( ) {
+function Photo( { imageUrl } ) {
 
 
     return (
-        <div className="photo" >
+        <>
+            
+            <img className="post__image" src={imageUrl} />
+            {/*  image */}
 
-        </div>
+        </>
     ) 
 }
 
