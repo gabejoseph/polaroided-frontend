@@ -41,9 +41,11 @@ function App() {
         ? 
         photos.map(photo => 
           <Post
-            posts={posts}
+            users={posts}
+            key={photo.id}
             caption={photo.caption}
             imageUrl={photo.img_src}
+            photo={photo}
           />
           
         )
