@@ -1,7 +1,7 @@
 import './Card.css'
 import React from 'react';
 import Button from '@material-ui/core/Button'
-import Photo from './photo'
+import Photo from './Photo'
 
 
 const BASE_URL = "https://polaroided-backend.herokuapp.com"

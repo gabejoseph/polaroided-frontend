@@ -5,7 +5,6 @@ import Footer from './Footer';
 import React from 'react';
 import Header from './Header';
 import User from './user';
-import Photo from './photo'
 import './App.css';
 import Post from './Post';
 import Component from 'react'
@@ -31,20 +30,19 @@ function App() {
   }, [])
 
 
+
   return (
       <div className="App" >
-          <div className="app__header" >
-            <img 
-              className="app__headerImage"
-              src="https://i.imgur.com/ZwFwl3E.jpg"
-              alt=""
-            />
-          </div>
+        <div className="app__header" >
+          <img 
+            className="app__headerImage"
+            src="https://i.imgur.com/ZwFwl3E.jpg"
+            alt=""
+          />
+        </div>
 
 
-      { 
-
-      }
+        <Post />
 
       </div>
   );

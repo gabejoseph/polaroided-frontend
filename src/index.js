@@ -1,4 +1,3 @@
-import Photo from './photo'
 import User from './user'
 import './Footer.css'
 
@@ -46,8 +45,8 @@ function fetchImages () {
     .then(resp => resp.json())
     .then(photos => {
         for (const photo of photos) {
-            const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
-            p.renderPhoto();
+            // const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
+            // p.renderPhoto();
         }
     })
 }
@@ -143,8 +142,8 @@ function handleImageUpload(event) {
     })
         .then(resp => resp.json())
         .then(photo => {
-            const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
-            p.renderPhoto();
+            // const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
+            // p.renderPhoto();
     })
 }
 
