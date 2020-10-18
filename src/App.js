@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     fetch(`${BASE_URL}/photos`)
     .then(resp => resp.json())
-    .then(photos => setPhotos(photos))  
+    .then(photos => setPhotos(photos))
   }, [])
 
 
@@ -37,8 +37,18 @@ function App() {
           />
         </div>
 
-
-        <Post />
+        { 
+        photos 
+        ? 
+        photos.map(photo => 
+          <Post
+            posts={posts}
+            photos={photos}
+          />
+        )
+        :
+        <p>noData</p>
+        }
 
       </div>
   );

@@ -3,8 +3,7 @@ import './Post.css'
 import Photo from './Photo'
 import Avatar from '@material-ui/core/Avatar'
 
-function Post( { username, caption } ) {
-
+function Post( { photos, posts, username, caption, ImageUrl } ) {
 
     return (
         <div className="post" >
@@ -17,12 +16,10 @@ function Post( { username, caption } ) {
                 <h3>{username}</h3>
             </div>
 
-            {/* header => avatar + username */}
 
             <Photo />
 
             <h4 className="post__text"> <strong>{username}</strong> {caption}</h4>
-            {/* username + caption */}
 
         </div>
     ) 
