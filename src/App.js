@@ -26,7 +26,6 @@ function App() {
   }, [])
 
 
-
   return (
       <div className="App" >
         <div className="app__header" >
@@ -43,8 +42,10 @@ function App() {
         photos.map(photo => 
           <Post
             posts={posts}
-            photos={photos}
+            caption={photo.caption}
+            imageUrl={photo.img_src}
           />
+          
         )
         :
         <p>noData</p>
