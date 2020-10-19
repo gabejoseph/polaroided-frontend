@@ -1,4 +1,3 @@
-import './Card.css'
 import React from 'react';
 import Button from '@material-ui/core/Button'
 

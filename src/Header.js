@@ -10,20 +10,16 @@ import { Button } from '@material-ui/core'
 function Header() {
 
     return (
-        <div className="header" >
+        <div className="app__header" >
             {/* <Link to='/' > */}
-                <img 
-                    className="header_icon"
-                    src="https://www.creativefabrica.com/wp-content/uploads/2019/05/Silhouette-of-a-modern-city-by-AlexZel-580x387.jpg"
-                    alt=""
-                />
-            {/* </Link> */}
-            <div className="header_center">
-                <input type="text" />
-                <SearchIcon />
-            </div>
 
-            <div className='header_right'>
+            <img 
+                className="app__headerImage"
+                src="https://i.imgur.com/ZwFwl3E.jpg"
+                alt=""
+            />
+
+            <div className='app__header_right'>
                 <Button id="sort"  >
                     <span >Sort Users</span>
                 </Button>

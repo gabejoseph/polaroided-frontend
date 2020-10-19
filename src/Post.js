@@ -44,17 +44,3 @@ function Post( { photo, users } ) {
 
 export default Post
  
-{/* <div className="post" >
-<div className="post__header">
-    <Avatar 
-        className="post__avatar"
-        alt='RafeQazi'
-        src="/static/images/avatar/1.jpg"
-    />
-    <h3>{user.username}</h3>
-</div>
-
-<img className="post__image" src={photo.img_src} />
-
-<h4 className="post__text"> <strong>{user.username}</strong> {photo.caption}</h4>
-<div/> */}

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import './App.css';
 import Post from './Post';
+import Footer from './Footer'
+import Header from './Header'
 
 
 function App() {
@@ -28,13 +30,7 @@ function App() {
 
   return (
       <div className="App" >
-        <div className="app__header" >
-          <img 
-            className="app__headerImage"
-            src="https://i.imgur.com/ZwFwl3E.jpg"
-            alt=""
-          />
-        </div>
+        <Header />
 
         { 
           photos 
@@ -42,6 +38,7 @@ function App() {
           photos.map(photo => 
             <Post
               users={posts}
+              key={photo.id}
               user_id={photo.user_id}
               caption={photo.caption}
               imageUrl={photo.img_src}
@@ -52,6 +49,7 @@ function App() {
           <p>noData</p>
         }
 
+      <Footer />
       </div>
   );
 }
