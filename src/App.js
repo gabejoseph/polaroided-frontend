@@ -6,6 +6,7 @@ import './App.css';
 import Post from './Post';
 import Footer from './Footer'
 import Header from './Header'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
 function App() {
@@ -30,26 +31,35 @@ function App() {
 
   return (
       <div className="App" >
-        <Header />
+        <Router>
+          <Header />
 
-        { 
-          photos 
-          ? 
-          photos.map(photo => 
-            <Post
-              users={posts}
-              key={photo.id}
-              user_id={photo.user_id}
-              caption={photo.caption}
-              imageUrl={photo.img_src}
-              photo={photo}
-            />
-          )
-          :
-          <p>noData</p>
-        }
 
-      <Footer />
+          <Switch>
+              {/* <Route path="/register" component={Register} />
+              <Route path="/search" component={SearchPage} />
+              <Route path="/login" component={Login} /> */}
+              <Route path="/" component={this} />
+            </ Switch>
+          { 
+            photos 
+            ? 
+            photos.map(photo => 
+              <Post
+                users={posts}
+                key={photo.id}
+                user_id={photo.user_id}
+                caption={photo.caption}
+                imageUrl={photo.img_src}
+                photo={photo}
+              />
+            )
+            :
+            <p>noData</p>
+          }
+
+          <Footer />
+        </Router>
       </div>
   );
 }
