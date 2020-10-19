@@ -14,7 +14,7 @@ function Post( { photo, users } ) {
                     user.id === photo.user_id
                     ?
                     <>
-                        <div>
+                        <div className="post" >
                             <div className="post__header">
                                 <Avatar 
                                     className="post__avatar"
