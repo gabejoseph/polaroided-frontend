@@ -4,12 +4,10 @@ import './Photo.css'
 
 function Photo( imageUrl, user_id ) {
 
-
     return (
         <>
             
             <img className="post__image" src={imageUrl} />
-            {/*  image */}
 
         </>
     ) 

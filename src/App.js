@@ -25,6 +25,7 @@ function App() {
     .then(photos => setPhotos(photos))
   }, [])
 
+  console.log(photos)
 
   return (
       <div className="App" >
@@ -37,20 +38,19 @@ function App() {
         </div>
 
         { 
-        photos 
-        ? 
-        photos.map(photo => 
-          <Post
-            users={posts}
-            key={photo.id}
-            caption={photo.caption}
-            imageUrl={photo.img_src}
-            photo={photo}
-          />
-          
-        )
-        :
-        <p>noData</p>
+          photos 
+          ? 
+          photos.map(photo => 
+            <Post
+              users={posts}
+              key={photo.id}
+              caption={photo.caption}
+              imageUrl={photo.img_src}
+              photo={photo}
+            />
+          )
+          :
+          <p>noData</p>
         }
 
       </div>
