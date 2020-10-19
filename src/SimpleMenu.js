@@ -4,11 +4,10 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Avatar } from "@material-ui/core"
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 // import { userActions } from '../actions/user.actions'
 
 class SimpleMenu extends React.Component {
-
+ 
 
   constructor(props) {
     super(props);
