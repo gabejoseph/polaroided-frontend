@@ -5,7 +5,7 @@ import { makestyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-import { userActions } from '../actions/user.actions'
+// import { userActions } from '../actions/user.actions'
 
 class Register extends React.Component {
     constructor(props) {
@@ -95,14 +95,14 @@ class Register extends React.Component {
     }
 }
 
-function mapState(state) {
-    const { registering } = state.registration;
-    return { registering };
-}
+// function mapState(state) {
+//     const { registering } = state.registration;
+//     return { registering };
+// }
 
-const actionCreators = {
-    register: userActions.register,
-    login: userActions.login
-}
+// const actionCreators = {
+//     register: userActions.register,
+//     login: userActions.login
+// }
 
-export default connect(mapState, actionCreators)(Register);
+export default Register

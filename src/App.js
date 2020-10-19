@@ -7,6 +7,8 @@ import Post from './Post';
 import Footer from './Footer'
 import Header from './Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Login from './Login'
+import Register from './Register'
 
 
 function App() {
@@ -36,9 +38,9 @@ function App() {
 
 
           <Switch>
-              {/* <Route path="/register" component={Register} />
-              <Route path="/search" component={SearchPage} />
-              <Route path="/login" component={Login} /> */}
+              <Route path="/register" component={Register} />
+              {/* <Route path="/search" component={SearchPage} /> */}
+              <Route path="/login" component={Login} />
               <Route path="/" component={this} />
             </ Switch>
           { 

@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-import { userActions } from '../actions/user.actions';
+// import { userActions } from '../actions/user.actions';
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
 
         // reset login status
-        this.props.logout();
+        // this.props.logout();
 
         this.state = {
             username: '',
@@ -69,14 +69,14 @@ class Login extends React.Component {
     }
 }
 
-function mapState(state) {
-    const { loggingIn } = state.authentication;
-    return { loggingIn };
-}
+// function mapState(state) {
+//     const { loggingIn } = state.authentication;
+//     return { loggingIn };
+// }
 
-const actionCreators = {
-    login: userActions.login,
-    logout: userActions.logout
-};
+// const actionCreators = {
+//     login: userActions.login,
+//     logout: userActions.logout
+// };
 
-export default connect(mapState, actionCreators)(Login);
+export default Login
