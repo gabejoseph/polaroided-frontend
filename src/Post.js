@@ -2,7 +2,7 @@ import React from 'react'
 import './Post.css'
 import Avatar from '@material-ui/core/Avatar'
 
-function Post( { photo, users, username, caption, imageUrl } ) {
+function Post( { photo, users } ) {
 
     return (
 
