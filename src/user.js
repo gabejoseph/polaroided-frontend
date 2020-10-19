@@ -1,7 +1,6 @@
 import './Card.css'
 import React from 'react';
 import Button from '@material-ui/core/Button'
-import Photo from './Photo'
 
 
 const BASE_URL = "https://polaroided-backend.herokuapp.com"
@@ -54,7 +53,6 @@ class User extends React.Component {
                         </ul>
                     </div>
                     <div class="row" id={result.id}></div>
-                    <Photo />
                     <Button id={result.id} onClick={deleteUser} >
                          Delete User
                     </Button>
