@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button'
 
 // import { userActions } from '../actions/user.actions';
 
+const BASE_URL = 'https://rails-vision-backend.herokuapp.com'
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -34,7 +36,7 @@ class Login extends React.Component {
         this.setState({ submitted: true });
         const { username, password } = this.state;
         if (username && password) {
-            this.props.login(username, password);
+            login(username, password);
             this.props.history.push('/')
         }
     }
@@ -81,46 +83,44 @@ class Login extends React.Component {
 
 export default Login
 
-const BASE_URL = 'https://rails-vision-backend.herokuapp.com'
+function login(email, password) {
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    };
 
-// function login(email, password) {
-//     const requestOptions = {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ email, password })
-//     };
+    return fetch(`${BASE_URL}/sessions`, requestOptions)
+        .then(handleResponse)
+        .then(user => {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('user', JSON.stringify(user));
 
-//     return fetch(`${BASE_URL}/sessions`, requestOptions)
-//         .then(handleResponse)
-//         .then(user => {
-//             // store user details and jwt token in local storage to keep user logged in between page refreshes
-//             localStorage.setItem('user', JSON.stringify(user));
+            return user;
+        });
+}
 
-//             return user;
-//         });
-// }
+function logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+}
 
-// function logout() {
-//     // remove user from local storage to log user out
-//     localStorage.removeItem('user');
-// }
-
-// function handleResponse(response) {
-//     return response.text().then(text => {
-//         const data = text && JSON.parse(text);
-//         if (!response.ok) {
-//             if (response.status === 401) {
-//                 // auto logout if 401 response returned from api
-//                 logout();
-//                 // location.reload(true);
-//             }
-//             const error = (data && data.message) || response.statusText;
-//             return Promise.reject(error);
-//         }
-//         console.log(data)
-//         return data;
-//     });
-// }
+function handleResponse(response) {
+    return response.text().then(text => {
+        const data = text && JSON.parse(text);
+        if (!response.ok) {
+            if (response.status === 401) {
+                // auto logout if 401 response returned from api
+                logout();
+                // location.reload(true);
+            }
+            const error = (data && data.message) || response.statusText;
+            return Promise.reject(error);
+        }
+        console.log(data)
+        return data;
+    });
+}

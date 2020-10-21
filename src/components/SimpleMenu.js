@@ -34,7 +34,7 @@ class SimpleMenu extends React.Component {
   };
 
   handleLogout() {
-    this.props.logout();
+    logout();
     this.handleClose();
   }
 
@@ -71,3 +71,8 @@ class SimpleMenu extends React.Component {
 // };
 
 export default SimpleMenu
+
+function logout() {
+  // remove user from local storage to log user out
+  localStorage.removeItem('user');
+}
