@@ -24,7 +24,7 @@ function Header() {
                     <span >Sort Users</span>
                 </Button>
                 
-                <div className="app__header_minimenu" >
+                <div className="app__header_minimenu">
                     <LanguageIcon />
                     <ImageMenu />
                 </div>

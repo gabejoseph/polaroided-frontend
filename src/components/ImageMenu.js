@@ -5,6 +5,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { Avatar } from "@material-ui/core"
 import { Link } from 'react-router-dom'
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import './ImageMenu.css'
+
 // import { userActions } from '../actions/user.actions'
 
 class ImageMenu extends React.Component {
@@ -44,7 +46,7 @@ class ImageMenu extends React.Component {
     const local = localStorage
 
     return (
-      <div>
+      <div className="button_menu" >
           <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.handleClick(event)}>
               <ExpandMoreIcon />
           </Button>

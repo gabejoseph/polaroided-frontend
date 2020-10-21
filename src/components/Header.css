@@ -22,5 +22,8 @@
 
 .app__header_minimenu {
     display: flex;
+    justify-content: space-between;
 }
+
+
 
