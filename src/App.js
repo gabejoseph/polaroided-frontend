@@ -18,7 +18,6 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [photos, setPhotos] = useState([]);
 
-  console.log(posts)
 
   // useEffect Runs a piece of code based on a specific condition
 
@@ -34,36 +33,39 @@ function App() {
     .then(photos => setPhotos(photos))
   }, [])
 
+  console.log(photos)
 
   return (
       <div className="App" >
         <Router>
           <Header />
 
-
+          
           <Switch>
               <Route path="/register" component={Register} />
-              {/* <Route path="/search" component={SearchPage} /> */}
               <Route path="/login" component={Login} />
-              <Route path="/" component={this} />
-            </ Switch>
-          { 
-            photos 
-            ? 
-            photos.map(photo =>
-               
-              <Post
-                users={posts}
-                key={photo.id}
-                user_id={photo.user_id}
-                caption={photo.caption}
-                imageUrl={photo.img_src}
-                photo={photo}
-              />
-            )
-            :
-            <p>noData</p>
-          }
+              { 
+              photos 
+              ? 
+              photos.map(photo =>
+
+                
+                <Route 
+                  path="/" 
+                  component={Post} 
+                  users={posts}
+                  key={photo.id}
+                  user_id={photo.user_id}
+                  caption={photo.caption}
+                  imageUrl={photo.img_src}
+                  photo={photo}
+                />
+              )
+              :
+              <p>noData</p>
+            }
+          </ Switch>
+
 
           <Footer />
         </Router>

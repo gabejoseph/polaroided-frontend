@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
-import SearchIcon from "@material-ui/icons/Search"
-import LanguageIcon from "@material-ui/icons/Language"
+// import SearchIcon from "@material-ui/icons/Search"
+// import LanguageIcon from "@material-ui/icons/Language"
 // import { Link } from 'react-router-dom'
 import SimpleMenu from './SimpleMenu'
 import { Button } from '@material-ui/core'

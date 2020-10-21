@@ -4,6 +4,8 @@ import Avatar from '@material-ui/core/Avatar'
 
 function Post( { photo, users } ) {
 
+
+    console.log("hi")
     return (
 
             <>
@@ -24,7 +26,7 @@ function Post( { photo, users } ) {
                                 <h3>{user.username}</h3>
                             </div>
 
-                            <img className="post__image" src={photo.img_src} />
+                            <img className="post__image" src={photo.img_src} alt="" />
 
                             <h4 className="post__text"> <strong>{user.username}</strong> {photo.caption}</h4>
                         </div>    

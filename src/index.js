@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-const BASE_URL = "https://polaroided-backend.herokuapp.com"
+// const BASE_URL = "https://polaroided-backend.herokuapp.com"
 
 ReactDOM.render(
       <React.StrictMode>
