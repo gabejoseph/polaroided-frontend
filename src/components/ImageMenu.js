@@ -15,7 +15,12 @@ class ImageMenu extends React.Component {
     super(props);
 
     this.state = {
-      anchorEl: null
+      anchorEl: null, 
+      photo: {
+        img_src: "",
+        caption: "",
+        user_id: ""
+      }
     }
 
     // this.handleClick = this.handleClick.bind(this)
@@ -35,10 +40,6 @@ class ImageMenu extends React.Component {
     })
   };
 
-  handleLogout() {
-    this.props.logout();
-    this.handleClose();
-  }
 
   render() {
 
@@ -47,9 +48,9 @@ class ImageMenu extends React.Component {
     return (
       <div className="button_menu" >
           <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.handleClick(event)}>
-              
             <Icon >add_circle</Icon>
           </Button>
+
           <Menu
               id="simple-menu"
               anchorEl={this.state.anchorEl}
@@ -76,36 +77,32 @@ class ImageMenu extends React.Component {
 export default ImageMenu
 
 
-// function handleImageUpload(event) {
-//     event.preventDefault()
-//     let userName = document.querySelector(".user-dropdown").value
-//     let dropDownList = document.querySelectorAll(".user-dropdown option")
-//     let caption = document.querySelector("#caption").value
-//     let url = document.querySelector("#url").value
+function handleUpload(photo) {
+  const requestOptions = {
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(photo)
+  };
 
-//     for ( let dropDown of dropDownList ) {
-//         if ( dropDown.value === userName) {
-//             var user_id = dropDown.id
-//         }
-//     }
+  // return fetch(`${BASE_URL}/photos`, requestOptions).then(handleResponse);
+}
 
-//     let photo = {
-//         img_src: url, 
-//         caption: caption,
-//         user_id: user_id
-//     }
-
-//     fetch(`${BASE_URL}/photos`, {
-//         method: "POST",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(photo)
-//     })
-//         .then(resp => resp.json())
-//         .then(photo => {
-//             // const p = new Photo(photo.id, photo.img_src, photo.caption, photo.user_id)
-//             // p.renderPhoto();
-//     })
+// function handleResponse(response) {
+//   return response.text().then(text => {
+//       const data = text && JSON.parse(text);
+//       if (!response.ok) {
+//           if (response.status === 401) {
+//               // auto logout if 401 response returned from api
+//               // logout();
+//               // location.reload(true);
+//           }
+//           const error = (data && data.message) || response.statusText;
+//           return Promise.reject(error);
+//       }
+//       console.log(data)
+//       return data;
+//   });
 // }
