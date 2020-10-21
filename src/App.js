@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import './App.css';
-import Post from './Post';
-import Footer from './Footer'
-import Header from './Header'
+import Post from './components/Post';
+import Footer from './components/Footer'
+import Header from './components/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Login from './Login'
-import Register from './Register'
+import Login from './components/Login'
+import Register from './components/Register'
 
 
 function App() {

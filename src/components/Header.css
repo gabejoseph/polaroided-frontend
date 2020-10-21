@@ -20,3 +20,7 @@
     height: 3vh;
 }
 
+.app__header_minimenu {
+    display: flex;
+}
+

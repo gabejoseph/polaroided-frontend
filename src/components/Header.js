@@ -2,10 +2,10 @@ import React from 'react'
 import './Header.css'
 import SearchIcon from "@material-ui/icons/Search"
 import LanguageIcon from "@material-ui/icons/Language"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 // import { Link } from 'react-router-dom'
 import SimpleMenu from './SimpleMenu'
 import { Button } from '@material-ui/core'
+import ImageMenu from './ImageMenu'
 
 function Header() {
 
@@ -24,9 +24,10 @@ function Header() {
                     <span >Sort Users</span>
                 </Button>
                 
-
-                <LanguageIcon />
-                <ExpandMoreIcon />
+                <div className="app__header_minimenu" >
+                    <LanguageIcon />
+                    <ImageMenu />
+                </div>
                 <SimpleMenu />
             </div>
 
