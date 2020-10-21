@@ -12,9 +12,13 @@ import Register from './components/Register'
 
 
 function App() {
-  const BASE_URL = "https://polaroided-backend.herokuapp.com"
+  // const BASE_URL = "https://polaroided-backend.herokuapp.com"
+  const BASE_URL = "http://localhost:4000"
+
   const [posts, setPosts] = useState([]);
   const [photos, setPhotos] = useState([]);
+
+  console.log(posts)
 
   // useEffect Runs a piece of code based on a specific condition
 
@@ -46,7 +50,8 @@ function App() {
           { 
             photos 
             ? 
-            photos.map(photo => 
+            photos.map(photo =>
+               
               <Post
                 users={posts}
                 key={photo.id}

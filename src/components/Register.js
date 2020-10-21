@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button'
 
 // import { userActions } from '../actions/user.actions'
 
-const BASE_URL = "https://polaroided-backend.herokuapp.com"
+  // const BASE_URL = "https://polaroided-backend.herokuapp.com"
+  const BASE_URL = "http://localhost:4000"
 
 class Register extends React.Component {
 
@@ -24,7 +25,6 @@ class Register extends React.Component {
             },
             submitted: false
         };
-
     }
 
 
@@ -45,6 +45,7 @@ class Register extends React.Component {
         this.setState({ submitted: true });
         const { user } = this.state;
         // user.name user.email user.username user.password
+        console.log(user)
         if (user.name && user.email && user.username && user.password) {
             register(user);
             this.props.history.push('/');
