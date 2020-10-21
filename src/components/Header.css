@@ -1,5 +1,6 @@
 .app__header_right {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
     width: 15vw;
 }
@@ -17,7 +18,7 @@
 }
 
 .app__header > img {
-    height: 3vh;
+    height: 10%;
 }
 
 .app__header_minimenu {

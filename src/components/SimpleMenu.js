@@ -66,10 +66,6 @@ class SimpleMenu extends React.Component {
   }
 }
 
-// const actionCreators = {
-//   logout: userActions.logout
-// };
-
 export default SimpleMenu
 
 function logout() {

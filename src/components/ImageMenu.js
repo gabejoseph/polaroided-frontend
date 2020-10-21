@@ -2,10 +2,9 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Avatar } from "@material-ui/core"
 import { Link } from 'react-router-dom'
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import './ImageMenu.css'
+import Icon from '@material-ui/core/Icon'
 
 // import { userActions } from '../actions/user.actions'
 
@@ -48,7 +47,8 @@ class ImageMenu extends React.Component {
     return (
       <div className="button_menu" >
           <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.handleClick(event)}>
-              <ExpandMoreIcon />
+              
+            <Icon >add_circle</Icon>
           </Button>
           <Menu
               id="simple-menu"

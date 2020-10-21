@@ -25,7 +25,6 @@ function Header() {
                 </Button>
                 
                 <div className="app__header_minimenu">
-                    <LanguageIcon />
                     <ImageMenu />
                 </div>
                 <SimpleMenu />
