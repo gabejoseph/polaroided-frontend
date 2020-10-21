@@ -18,7 +18,8 @@
 }
 
 .app__header > img {
-    height: 10%;
+    padding-top: 15px;
+    max-height: 7vh;
 }
 
 .app__header_minimenu {
