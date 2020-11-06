@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import './App.css';
-import Post from './components/Post';
+import Post from '../src/components/Post';
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -18,14 +18,15 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [photos, setPhotos] = useState([]);
 
-
   // useEffect Runs a piece of code based on a specific condition
 
   useEffect(() => {
     fetch(`${BASE_URL}/users`)
     .then(resp => resp.json())
     .then(users => setPosts(users))
-  }, [])
+    
+  }
+  , [])
 
   useEffect(() => {
     fetch(`${BASE_URL}/photos`)
@@ -33,9 +34,8 @@ function App() {
     .then(photos => setPhotos(photos))
   }, [])
 
-  console.log(photos)
-
   return (
+    
       <div className="App" >
         <Router>
           <Header />

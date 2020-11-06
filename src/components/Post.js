@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar'
 function Post( { photo, users } ) {
 
 
-    console.log("hi")
+    console.log(users)
     return (
 
             <>

@@ -46,6 +46,7 @@ class Register extends React.Component {
         console.log(user)
         if (user.name && user.email && user.username && user.password) {
             register(user);
+            login(user.email, user.password);
             this.props.history.push('/');
         }
     }
@@ -143,6 +144,27 @@ function register(user) {
 //     return fetch(`${BASE_URL}/users/${id}`, requestOptions).then(handleResponse);
 // }
 
+function login(email, password) {
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    };
+
+    return fetch(`${BASE_URL}/sessions`, requestOptions)
+        .then(handleResponse)
+        .then(user => {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('user', JSON.stringify(user));
+
+            return user;
+        });
+    console.log(localStorage)
+}
+
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
@@ -160,7 +182,6 @@ function handleResponse(response) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }
-        console.log(data)
         return data;
     });
 }

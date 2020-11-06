@@ -21,6 +21,8 @@ class SimpleMenu extends React.Component {
     // this.handleLogout = this.handleLogout.bind(this)
   }
 
+  
+
   handleClick(event) {
     this.setState({
       anchorEl: event.currentTarget
