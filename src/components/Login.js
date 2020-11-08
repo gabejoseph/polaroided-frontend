@@ -98,9 +98,10 @@ function login(email, password) {
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('user', JSON.stringify(user));
-
+            window.location.reload();
             return user;
         });
+
 }
 
 function logout() {
@@ -120,7 +121,6 @@ function handleResponse(response) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }
-        console.log(data)
         return data;
     });
 }

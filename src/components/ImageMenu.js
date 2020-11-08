@@ -47,24 +47,32 @@ class ImageMenu extends React.Component {
 
     return (
       <div className="button_menu" >
-          <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.handleClick(event)}>
-            <Icon >add_circle</Icon>
-          </Button>
+          { 
+          local.user 
+          ?
+          <>
+            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.handleClick(event)}>
+              <Icon >add_circle</Icon>
+            </Button>
 
-          <Menu
-              id="simple-menu"
-              anchorEl={this.state.anchorEl}
-              keepMounted
-              open={Boolean(this.state.anchorEl)}
-              onClose={() => this.handleClose()}
-          >
-             {local.user ? <MenuItem onClick={() => this.handleLogout()}>Logout</MenuItem> : 
-               <div>
-                 <Link to='/login' ><MenuItem onClick={() => this.handleClose()}>Login / Register</MenuItem></Link>
-                 <MenuItem onClick={() => this.handleLogout()}>Logout</MenuItem>   
-               </div>
-             }
-          </Menu>
+            <Menu
+                id="simple-menu"
+                anchorEl={this.state.anchorEl}
+                keepMounted
+                open={Boolean(this.state.anchorEl)}
+                onClose={() => this.handleClose()}
+            >
+              {local.user ? <MenuItem onClick={() => this.handleLogout()}></MenuItem> : 
+                <div>
+                  <Link to='/login' ><MenuItem onClick={() => this.handleClose()}>Login / Register</MenuItem></Link>
+                  <MenuItem onClick={() => this.handleLogout()}>Logout</MenuItem>   
+                </div>
+              }
+            </Menu>
+          </>
+          :
+          <p>hi</p>
+          }
       </div>
     );
   }
@@ -78,6 +86,7 @@ export default ImageMenu
 
 
 function handleUpload(photo) {
+  const BASE_URL = "http://localhost:4000"
   const requestOptions = {
       method: 'POST',
       headers: {
@@ -87,22 +96,21 @@ function handleUpload(photo) {
       body: JSON.stringify(photo)
   };
 
-  // return fetch(`${BASE_URL}/photos`, requestOptions).then(handleResponse);
+  return fetch(`${BASE_URL}/photos`, requestOptions).then(handleResponse);
 }
 
-// function handleResponse(response) {
-//   return response.text().then(text => {
-//       const data = text && JSON.parse(text);
-//       if (!response.ok) {
-//           if (response.status === 401) {
-//               // auto logout if 401 response returned from api
-//               // logout();
-//               // location.reload(true);
-//           }
-//           const error = (data && data.message) || response.statusText;
-//           return Promise.reject(error);
-//       }
-//       console.log(data)
-//       return data;
-//   });
-// }
+function handleResponse(response) {
+  return response.text().then(text => {
+      const data = text && JSON.parse(text);
+      if (!response.ok) {
+          if (response.status === 401) {
+              // auto logout if 401 response returned from api
+              // logout();
+              // location.reload(true);
+          }
+          const error = (data && data.message) || response.statusText;
+          return Promise.reject(error);
+      }
+      return data;
+  });
+}
