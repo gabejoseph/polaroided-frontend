@@ -9,6 +9,7 @@ import Header from './components/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Register from './components/Register'
+import Image from './components/Image'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Switch>
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
+              <Route path="/image" component={Image} />
               { 
               photos 
               ? 

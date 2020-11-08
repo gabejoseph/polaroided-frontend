@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { Link } from 'react-router-dom'
 import './ImageMenu.css'
 import Icon from '@material-ui/core/Icon'
+import Image from './Image'
 
 // import { userActions } from '../actions/user.actions'
 
@@ -62,12 +63,7 @@ class ImageMenu extends React.Component {
                 open={Boolean(this.state.anchorEl)}
                 onClose={() => this.handleClose()}
             >
-              {local.user ? <MenuItem onClick={() => this.handleLogout()}></MenuItem> : 
-                <div>
-                  <Link to='/login' ><MenuItem onClick={() => this.handleClose()}>Login / Register</MenuItem></Link>
-                  <MenuItem onClick={() => this.handleLogout()}>Logout</MenuItem>   
-                </div>
-              }
+              <Link to='/image' ><MenuItem onClick={() => this.handleClose()}>Upload Image</MenuItem></Link>
             </Menu>
           </>
           :
