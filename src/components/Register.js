@@ -43,6 +43,7 @@ class Register extends React.Component {
         // user.name user.email user.username user.password
         console.log(user)
         if (user.name && user.email && user.username && user.password) {
+            debugger
             register(user);
             login(user.email, user.password);
             this.props.history.push('/');
