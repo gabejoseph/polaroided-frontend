@@ -16,7 +16,7 @@ function App() {
   // const BASE_URL = "https://polaroided-backend.herokuapp.com"
   const BASE_URL = "http://localhost:4000"
 
-  const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [photos, setPhotos] = useState([]);
 
   // useEffect Runs a piece of code based on a specific condition
@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     fetch(`${BASE_URL}/users`)
     .then(resp => resp.json())
-    .then(users => setPosts(users))
+    .then(users => setUsers(users))
     
   }
   , [])
@@ -47,25 +47,22 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/image" component={Image} />
               { 
-              photos 
-              ? 
-              photos.map(photo =>
+                photos && users
+                ? 
+                photos.map(photo =>
 
-                
-                <Route 
-                  path="/" 
-                  component={Post} 
-                  users={posts}
-                  key={photo.id}
-                  user_id={photo.user_id}
-                  caption={photo.caption}
-                  imageUrl={photo.img_src}
-                  photo={photo}
-                />
-              )
-              :
-              <p>noData</p>
-            }
+                   <Post 
+                     users={users}
+                     key={photo.id}
+                     user_id={photo.user_id}
+                     caption={photo.caption}
+                     imageUrl={photo.img_src}
+                     photo={photo}
+                   />
+                )
+                :
+                <p>noData</p>
+              }
           </ Switch>
 
 

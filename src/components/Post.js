@@ -3,14 +3,13 @@ import './Post.css'
 import Avatar from '@material-ui/core/Avatar'
 
 function Post( { photo, users } ) {
+    // console.log(photo, users)
 
-
-    console.log(users)
     return (
 
             <>
 
-
+                {console.log(photo, users)}
                 {
                 users.map(user => 
                     user.id === photo.user_id

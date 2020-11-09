@@ -39,8 +39,9 @@ class Image extends React.Component {
 
         this.setState({ submitted: true });
         const { img_src, caption, user_id } = this.state;
+        const photo = {img_src: img_src, caption: caption, user_id: user_id}
         if (img_src && caption && user_id) {
-            handleUpload(img_src, caption, user_id);
+            handleUpload(photo);
             this.props.history.push('/')
         }
     }
