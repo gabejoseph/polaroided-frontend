@@ -65,7 +65,7 @@ class ImageMenu extends React.Component {
             </Menu>
           </>
           :
-          <p>hi</p>
+          <></>
           }
       </div>
     );
