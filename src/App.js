@@ -9,8 +9,6 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Image from './components/Image'
 import { Modal } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
 
 function App() {
   const BASE_URL = "https://polaroided-backend.herokuapp.com"
@@ -18,43 +16,8 @@ function App() {
 
   const [users, setUsers] = useState([]);
   const [photos, setPhotos] = useState([]);
+  const [open, setOpen] = useState(false);
 
-  const useStyles = makeStyles((theme) => ({
-    paper: {
-      position: 'absolute',
-      width: 400,
-      backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
-    },
-  }));
-
-  function rand() {
-    return Math.round(Math.random() * 20) - 10;
-  }
-
-  function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
-  
-    return {
-      top: `${top}%`,
-      left: `${left}%`,
-      transform: `translate(-${top}%, -${left}%)`,
-    };
-  }
-
-  const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   useEffect(() => {
     fetch(`${BASE_URL}/users`)
@@ -75,20 +38,20 @@ function App() {
       <div className="App" >
         <Router>
           <Header />
-
-          
-          <Switch>
-              <button type="button" onClick={handleOpen}>
+              <button type="button" onClick={() => setOpen(true)}>
                 Open Modal
               </button>
               <Modal
                 open={open}
-                onClose={handleClose}
+                onClose={() => setOpen(false)}
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
               >
-                {}
+                {<p>I am a modal</p>}
               </Modal>
+          
+          <Switch>
+
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
               <Route path="/image" component={Image} />
