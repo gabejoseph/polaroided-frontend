@@ -1,5 +1,3 @@
-// import Home from './containers/Home'
-// import Header from './components/Header'
 import { useState, useEffect } from 'react';
 import React from 'react';
 import './App.css';
@@ -13,8 +11,8 @@ import Image from './components/Image'
 
 
 function App() {
-  // const BASE_URL = "https://polaroided-backend.herokuapp.com"
-  const BASE_URL = "http://localhost:4000"
+  const BASE_URL = "https://polaroided-backend.herokuapp.com"
+  // const BASE_URL = "http://localhost:4000"
 
   const [users, setUsers] = useState([]);
   const [photos, setPhotos] = useState([]);

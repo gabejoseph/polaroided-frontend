@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-// import { userActions } from '../actions/user.actions'
-
-  // const BASE_URL = "https://polaroided-backend.herokuapp.com"
-  const BASE_URL = "http://localhost:4000"
+  const BASE_URL = "https://polaroided-backend.herokuapp.com"
+//   const BASE_URL = "http://localhost:4000"
 
 class Register extends React.Component {
 
@@ -97,16 +95,6 @@ class Register extends React.Component {
     }
 }
 
-// function mapState(state) {
-//     const { registering } = state.registration;
-//     return { registering };
-// }
-
-// const actionCreators = {
-//     register: userActions.register,
-//     login: userActions.login
-// }
-
 export default Register
 
 function register(user) {
@@ -162,7 +150,6 @@ function login(email, password) {
 
             return user;
         });
-    console.log(localStorage)
 }
 
 function logout() {

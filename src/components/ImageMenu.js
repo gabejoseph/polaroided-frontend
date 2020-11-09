@@ -7,8 +7,6 @@ import './ImageMenu.css'
 import Icon from '@material-ui/core/Icon'
 import Image from './Image'
 
-// import { userActions } from '../actions/user.actions'
-
 class ImageMenu extends React.Component {
  
 
@@ -74,39 +72,4 @@ class ImageMenu extends React.Component {
   }
 }
 
-// const actionCreators = {
-//   logout: userActions.logout
-// };
-
 export default ImageMenu
-
-
-function handleUpload(photo) {
-  const BASE_URL = "http://localhost:4000"
-  const requestOptions = {
-      method: 'POST',
-      headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(photo)
-  };
-
-  return fetch(`${BASE_URL}/photos`, requestOptions).then(handleResponse);
-}
-
-function handleResponse(response) {
-  return response.text().then(text => {
-      const data = text && JSON.parse(text);
-      if (!response.ok) {
-          if (response.status === 401) {
-              // auto logout if 401 response returned from api
-              // logout();
-              // location.reload(true);
-          }
-          const error = (data && data.message) || response.statusText;
-          return Promise.reject(error);
-      }
-      return data;
-  });
-}

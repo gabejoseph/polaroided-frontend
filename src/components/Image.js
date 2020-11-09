@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-// import { userActions } from '../actions/user.actions';
-
-  // const BASE_URL = "https://polaroided-backend.herokuapp.com"
-  const BASE_URL = "http://localhost:4000"
+  const BASE_URL = "https://polaroided-backend.herokuapp.com"
+//   const BASE_URL = "http://localhost:4000"
   
 class Image extends React.Component {
     constructor(props) {
@@ -23,6 +21,8 @@ class Image extends React.Component {
             },
             user_id: JSON.parse(localStorage.user).user.id
         }
+
+        console.log(localStorage)
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -72,16 +72,6 @@ class Image extends React.Component {
         );
     }
 }
-
-// function mapState(state) {
-//     const { loggingIn } = state.authentication;
-//     return { loggingIn };
-// }
-
-// const actionCreators = {
-//     login: userActions.login,
-//     logout: userActions.logout
-// };
 
 export default Image
 

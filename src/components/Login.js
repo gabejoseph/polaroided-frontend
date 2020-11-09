@@ -5,8 +5,8 @@ import Button from '@material-ui/core/Button'
 
 // import { userActions } from '../actions/user.actions';
 
-  // const BASE_URL = "https://polaroided-backend.herokuapp.com"
-  const BASE_URL = "http://localhost:4000"
+  const BASE_URL = "https://polaroided-backend.herokuapp.com"
+//   const BASE_URL = "http://localhost:4000"
   
 class Login extends React.Component {
     constructor(props) {
@@ -71,19 +71,10 @@ class Login extends React.Component {
     }
 }
 
-// function mapState(state) {
-//     const { loggingIn } = state.authentication;
-//     return { loggingIn };
-// }
-
-// const actionCreators = {
-//     login: userActions.login,
-//     logout: userActions.logout
-// };
-
 export default Login
 
 function login(email, password) {
+
     const requestOptions = {
         method: 'POST',
         headers: {
