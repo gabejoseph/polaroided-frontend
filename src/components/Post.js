@@ -42,4 +42,15 @@ function Post( { photo, users } ) {
 }
 
 export default Post
- 
+
+// function deleteUser(event) {
+//     console.log('delete user')
+//     event.preventDefault()
+//     let userId = parseInt(event.target.dataset.id)
+
+//     fetch(`${BASE_URL}/users/${userId}`, {
+//         method: 'DELETE'
+//     })
+
+//     window.location.reload()
+// }

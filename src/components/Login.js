@@ -41,6 +41,8 @@ class Login extends React.Component {
         }
     }
 
+    
+
     render() {
         const { loggingIn } = this.props;
         const { email, password, submitted } = this.state;
@@ -48,6 +50,7 @@ class Login extends React.Component {
             <div>
                 <h2>Login</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
+
                     <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
                         <TextField type="text" label="Email" htmlFor="email" className="form-control" name="email" value={email} onChange={this.handleChange} />
                         {submitted && !email &&
