@@ -169,6 +169,7 @@ function handleResponse(response) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }
+        console.log(data)
         return data;
     });
 }

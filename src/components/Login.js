@@ -92,7 +92,6 @@ function login(email, password) {
             window.location.reload();
             return user;
         });
-
 }
 
 function logout() {
@@ -113,5 +112,6 @@ function handleResponse(response) {
             return Promise.reject(error);
         }
         return data;
+        console.log(data);
     });
 }

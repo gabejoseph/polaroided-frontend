@@ -77,7 +77,7 @@ export default Image
 
 function handleUpload(photo) {
     debugger
-    const BASE_URL = "http://localhost:4000"
+    const BASE_URL = "https://polaroided-backend.herokuapp.com"
     const requestOptions = {
         method: 'POST',
         headers: {
